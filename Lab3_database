@@ -1,64 +1,94 @@
-1) DDL используется для указывания структуру хранения и методы доступа, используемые 
-системой базы данных. (Create, Drop, Alter)
-DML используется для манипуляции с базами данных. (Удалять, менять данные и тд.)
-a) 1)CREATE TABLE person(name varchar(255), surname text)
-2)DROP TABLE person
-3)ALTER name text
-b) 1)SELECT * FROM person
-2)DELETE FROM person
-3) INSERT INTO person VALUES(‘BOB’,’BOB’)
-4)UPDATE person SET name=’Paul’
-2) Create table customers(
-Id integer primary key,
-Full_name varchar(50),
-Timestamp timestamp,
-Delivery_address text
+1.  DDL: CREATE , DROP , ALTER  DML: INSERT , UPDATE , DELETE , LOCK
+2.  CREATE TABLE employees(
+    emp_no int(10)
+    birth_date DATE
+    first_name VARCHAR(14)
+    last_name VARCHAR(16)
+    gender ENUM('M','F')
+    hire_date DATE
+    PRIMARY KEY (emp_no)
 );
-Create table orders(
-code integer primary key,
-customer_id integer,
-total_sum double,
-id_paid boolean,
-foreign key (customer_id) references customers(id)
+  CREATE TABLE departments (
+    dep_no CHAR(4),
+    dept_name VARCHAR(40),
+    PRIMARY KEY(dep_no)
 );
-Create table products(
-Id varchar primary key,
-name varchar,
-description text,
-price double
+CREATE TABLE dept_emp(
+    emp_no int(10),
+    dep_no CHAR(4),
+    from_date DATE,
+    to_date DATE,
+    FOREIGN KEY(dep_no) references departments(dep_no),
+    FOREIGN KEY(emp_no) references employees(emp_no)
 );
-Create table order_items(
-Order_code integer,
-Product_id varchar,
-Quantity integer,
-foreign key (Order_code) references orders (code),
-foreign key (Product_id) references products (id)
+CREATE TABLE dept_manager(
+    dep_no CHAR(4),
+    emp_no int(10),
+    from_date DATE,
+    to_date DATE,
+    FOREIGN KEY(dep_no) references departments(dep_no),
+    FOREIGN KEY(emp_no) references employees(emp_no)
 );
-3) Create table Students(
-Name varchar,
-Surmane varchar,
-Patronymic varchar,
-Age integer,
-Birth_date timestamp,
-Average_grade double,
-Self_info text,
-Need_dormitory boolean,
-Additional_info text
+CREATE TABLE salaries(
+    emp_no int(10),
+    salary int(11),
+    from_date DATE,
+    to_date DATE
+    FOREIGN KEY(emp_no) references employees(emp_no),
+    FOREIGN KEY(from_date) references titles(from_date)
 );
-Create table instructors (
-Name varchar,
-Surmane varchar,
-Patronymic varchar,
-Speaking languages varchar[],
-Work_experience text,
-Pos_remote_lessons boolean
+CREATE TABLE titles(
+    emp_no int(10),
+    title VARCHAR(50),
+    from_date DATE,
+    to_date DATE,
+    PRIMARY KEY(from_date),
+    PRIMARY KEY(title)
 );
-Create table Lesson (
-Name varchar,
-Teacher instructors,
-Studying Students[],
-Room integer
+3.  CREATE TABLE student(
+    full_name VARCHAR(10),
+    age int(3),
+    birth_date DATE,
+    gender ENUM('M','F'),
+    average_grade int(10),
+    nationality VARCHAR(10),
+    phone_number int(11),
+    social_category VARCHAR(10),
+    PRIMARY KEY(full_name)
 );
-4) INSERT INTO customers VALUES(1,’Mikle’,now(),’Los santos’)
-UPDATE customers SET full_name=’BOB’
-DELET FROM customers WHERE full_name=’BOB 
+CREATE TABLE instructors(
+    full_name VARCHAR(10),
+    speaking_languages VARCHAR(10),
+    working_expirience VARCHAR(50),
+    possibility_of_remote_lessons BIT DEFAULT 1,
+    FOREIGN KEY (full_name) references student(full_name)
+);
+CREATE TABLE student_relatives(
+    full_name VARCHAR(10),
+    address int(10),
+    phone_number int(11),
+    position VARCHAR(10),
+    FOREIGN KEY (phone_number) references student(phone_number),
+    FOREIGN KEY (full_name) references student(full_name),
+    PRIMARY KEY(adress)
+);
+CREATE TABLE social_data(
+    school VARCHAR(10),
+    graduation_data DATA,
+    adress int(10),
+    region VARCHAR(15),
+    country VARCHAR(10),
+    gpa FLOAT(10),
+    honors VARCHAR(10),
+    FOREIGN KEY (adress) references student_relatives(address),
+);
+4.
+INSERT INTO employees
+    (birth_date, first_name, last_name, gender, hire_date) VALUES (to_date(‘2003-12-20’, ‘yyyy-MM-dd’), ‘Miras’, ‘Temirov’, ‘Male’, to_date(NOW(), ‘yyyy-MM-dd’));
+
+UPDATE salaries
+   salary = 10000
+WHERE emp_no = 3;
+
+DELETE FROM employees
+WHERE birth_date = "28-09-2022";
