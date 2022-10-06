@@ -1,4 +1,10 @@
-1.  DDL: CREATE , DROP , ALTER  DML: INSERT , UPDATE , DELETE , LOCK
+1.  DDL:this is a group of data definition operators.
+In other words, using the operators included in this group, we define the structure of the database and work with the objects of this database, i.e. create, modify and delete them.
+CREATE – used to create database objects;
+ALTER – used to modify database objects;
+DROP – used to delete database objects.
+ALTER  DML this is a group of operators for data manipulation. With the help of these operators, we can add, modify, delete and unload data from the database, i.e. manipulate them.
+INSERT , UPDATE , DELETE , LOCK
 2.  CREATE TABLE employees(
     emp_no int(10)
     birth_date DATE
