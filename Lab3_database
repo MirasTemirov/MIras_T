@@ -1,0 +1,64 @@
+1) DDL используется для указывания структуру хранения и методы доступа, используемые 
+системой базы данных. (Create, Drop, Alter)
+DML используется для манипуляции с базами данных. (Удалять, менять данные и тд.)
+a) 1)CREATE TABLE person(name varchar(255), surname text)
+2)DROP TABLE person
+3)ALTER name text
+b) 1)SELECT * FROM person
+2)DELETE FROM person
+3) INSERT INTO person VALUES(‘BOB’,’BOB’)
+4)UPDATE person SET name=’Paul’
+2) Create table customers(
+Id integer primary key,
+Full_name varchar(50),
+Timestamp timestamp,
+Delivery_address text
+);
+Create table orders(
+code integer primary key,
+customer_id integer,
+total_sum double,
+id_paid boolean,
+foreign key (customer_id) references customers(id)
+);
+Create table products(
+Id varchar primary key,
+name varchar,
+description text,
+price double
+);
+Create table order_items(
+Order_code integer,
+Product_id varchar,
+Quantity integer,
+foreign key (Order_code) references orders (code),
+foreign key (Product_id) references products (id)
+);
+3) Create table Students(
+Name varchar,
+Surmane varchar,
+Patronymic varchar,
+Age integer,
+Birth_date timestamp,
+Average_grade double,
+Self_info text,
+Need_dormitory boolean,
+Additional_info text
+);
+Create table instructors (
+Name varchar,
+Surmane varchar,
+Patronymic varchar,
+Speaking languages varchar[],
+Work_experience text,
+Pos_remote_lessons boolean
+);
+Create table Lesson (
+Name varchar,
+Teacher instructors,
+Studying Students[],
+Room integer
+);
+4) INSERT INTO customers VALUES(1,’Mikle’,now(),’Los santos’)
+UPDATE customers SET full_name=’BOB’
+DELET FROM customers WHERE full_name=’BOB 
