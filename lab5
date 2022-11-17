@@ -1,0 +1,60 @@
+
+drop table warehouse;
+create table Warehouses (
+
+    code int not null primary key,
+    location varchar(255) not null,
+    capacity int not null
+
+);
+drop table packs;
+
+create table Packs(
+    code varchar(4) not null primary key,
+     contents varchar(255) not null,
+     value numeric not null,
+     warehouses int,
+     foreign key (warehouses) references Warehouses(code)
+
+);
+
+
+
+
+
+1
+select * from Packs ;
+2
+select * from Packs where value > 190;
+3
+select * from Packs where contents = (select DISTINCT (contents) from Packs);
+
+select distinct ( contents), * from Packs;--
+4
+select warehouses, count(code) from Packs group by warehouses;
+
+5
+drop table number;
+create temp table number as
+select warehouses, count(code) as num from Packs  group by warehouses;
+6
+select * from number where num > 2;
+7
+insert into warehouses(code, location, capacity) VALUES(6, 'TEXAS', 5);
+
+select * from warehouses;
+8
+insert into Packs(code, contents, value, warehouses) VALUES ('H5RT', 'Papers',150, 2);
+
+select * from Packs;
+9
+create temp table val as
+select value from packs order by value desc limit 3 offset 3;
+10
+select value- (value* 0.18) from val order by value asc limit 1;
+12
+delete from Packs where value < 150;
+select * from Packs;
+
+create temp table delete as
+    delete from warehouses where location= 'Chicago';
