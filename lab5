@@ -37,7 +37,8 @@ SELECT * from Warehouses order by asc;
 INSERT INTO Boxes(code, contents, value, warehouses) VALUES ('H5RT', 'Papers', 200, 2);
 
 11
-UPDATE boxes SET value = (value*0.85) where code = (SELECT code FROM boxes where value = (select distinct on(value) from boxes ));
+
+UPDATE boxes SET value = (value*0.85) where code = (SELECT code FROM boxes where value = (select distinct on(value) from boxes limit 1 offset 2));
 
 12
 DELETE FROM boxes WHERE value < 150;
