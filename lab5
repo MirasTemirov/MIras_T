@@ -58,7 +58,8 @@ select * from Packs;
 
 create temp table delete as
     delete from warehouses where location= 'Chicago';
-    select * from boxes
+13
+select * from boxes
     where warehouses = (
         (select code from warehouses
             where location = 'New York') /*sub-query*/
