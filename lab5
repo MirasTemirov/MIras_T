@@ -1,78 +1,46 @@
 
-drop table warehouse;
-create table Warehouses (
-
-    code int not null primary key,
+CREATE TABLE Warehouses(
+    code integer not null primary key,
     location varchar(255) not null,
-    capacity int not null
-
-);
-drop table packs;
-
-create table Packs(
-    code varchar(4) not null primary key,
-     contents varchar(255) not null,
-     value numeric not null,
-     warehouses int,
-     foreign key (warehouses) references Warehouses(code)
-
+    capacity integer not null
 );
 
+CREATE TABLE Boxes(
+    code character(4) not null primary key,
+    contents character varying(255) not null,
+    value real not null,
+    warehouses integer not null,
+    foreign key (warehouses) references Warehouses(code)
+);
 
-
-
-
-1
-select * from Packs ;
-2
-select * from Packs where value > 190;
-3
-select * from Packs where contents = (select DISTINCT (contents) from Packs);
-
-select distinct ( contents), * from Packs;--
 4
-select warehouses, count(code) from Packs group by warehouses;
+SELECT * from Warehouses;
 
 5
-drop table number;
-create temp table number as
-select warehouses, count(code) as num from Packs  group by warehouses;
+SELECT * from Boxes where value>150;
+
 6
-select * from number where num > 2;
+SELECT DISTINCT on(contents) * from Boxes;
+
 7
-insert into warehouses(code, location, capacity) VALUES(6, 'TEXAS', 5);
+SELECT warehouses, count(code) from boxes group by warehouses;
 
-select * from warehouses;
 8
-insert into Packs(code, contents, value, warehouses) VALUES ('H5RT', 'Papers',150, 2);
+SELECT warehouses, count(code) from boxes group by warehouses having count(code)>2;
 
-select * from Packs;
 9
-create temp table val as
-select value from packs order by value desc limit 3 offset 3;
+INSERT INTO Warehouses(code, location, capacity) VALUES (6, 'New York', 3);
+
+SELECT * from Warehouses order by asc;
+
 10
-select value- (value* 0.18) from val order by value asc limit 1;
+INSERT INTO Boxes(code, contents, value, warehouses) VALUES ('H5RT', 'Papers', 200, 2);
+
+11
+UPDATE boxes SET value = (value*0.85) where code = (SELECT code FROM boxes where value = (select distinct on(value) from boxes ));
+
 12
-delete from Packs where value < 150;
-select * from Packs;
+DELETE FROM boxes WHERE value < 150;
 
-create temp table delete as
-    delete from warehouses where location= 'Chicago';
 13
-select * from boxes
-    where warehouses = (
-        (select code from warehouses
-            where location = 'New York') /*sub-query*/
-        );
-
-select boxes.code, boxes.contents, boxes.value, boxes.warehouses
-from boxes inner join warehouses on boxes.warehouses = warehouses.code
-where location = 'New York'
-group by boxes.code, boxes.contents, boxes.value, boxes.warehouses;
-
-
-delete from boxes
-       where warehouses=(
-            (select code from warehouses
-                 where location = 'New York') --sub-query
-            );
+DELETE FROM boxes WHERE warehouses in (select code from warehouses where location = 'New York') returning *;
