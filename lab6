@@ -51,36 +51,31 @@ WHERE c.priority IS NOT NULL
 AND s.amount > 2000;
 
 
---2
+--2--
+a
+create view view1 as select count(distinct c.id), avg(s.amount), sum(s.amount),s.date from client as c inner join sell as s on c.id = s.client_id
+                                                                        group by s.date order by s.date;
+select * from view1;
 
---a
-CREATE OR REPLACE VIEW a as
-    SELECT count(DISTINCT client_id) as "number", avg(amount) as "average", sum(amount) as "total", date
-FROM sell
-GROUP BY date;
+b
+create view view2 as SELECT sum(amount),date from sell group by date order by sum(amount) desc limit 5;
+select * from view2;
 
-select count(distinct(client_id)), avg(sell.amount), max(sell.amount) from sell group by sell.date
+c
+create view view3 as SELECT COUNT(d.id),AVG(s.amount),SUM(s.amount),d.name,d.id from sell as s join dealer as d on s.dealer_id = d.id group by d.name,d.id ;
+select * from view3;
 
---b
+d
+create view view4 as SELECT d.id,name,location,charge*sum(s.amount) from dealer as d inner join sell as s on d.id = s.dealer_id group by d.id, name, location, charge;
+select * from view4;
 
-select sum(sell.amount) from sell group by sell.date order by sum(sell.amount) desc limit 5
+e
+create view view5 as SELECT COUNT(s.dealer_id),AVG(s.amount),SUM(s.amount),d.location from dealer as d join sell as s on d.id = s.dealer_id group by d.location;
+select * from view5;
+f
+create view view6 as SELECT COUNT(s.client_id),AVG(s.amount),SUM(s.amount - c.priority),c.city from sell as s join client c on s.client_id = c.id group by c.city;
+select * from view6;
 
---c
-
-select count(dealer_id), avg(sell.amount), sum(sell.amount), dealer_id from sell group by dealer_id
-
---d
-
-Select d.location, sum((sell.amount)*d.charge) as "commission" from sell join dealer d on d.id = sell.dealer_id group by d.location
-
---e
-
-Select d.location, count(dealer_id), avg((sell.amount)*d.charge), sum((sell.amount)*d.charge) as "commission" from sell join dealer d on d.id = sell.dealer_id group by d.location
-
---f
-
-Select c.city, count(c.city), avg(sell.amount), sum(sell.amount) from sell join client c on c.id = sell.client_id group by c.city
-
---g
+g
 create view view7 as SELECT c.city from client as c join sell s on c.id = s.client_id where c.priority > s.amount;
 select * from view7;
