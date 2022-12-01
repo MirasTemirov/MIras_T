@@ -16,25 +16,48 @@ SELECT * FROM dealer join client c on dealer.location=c.city
 SELECT sell.id, sell.amount, c.name, c.city from sell join client c on c.id = sell.client_id where sell.amount between 100 and 500
 
 --e
+SELECT *
+FROM dealer d
+    FULL OUTER JOIN client c on d.id = c.dealer_id;
 
 
 --f
 
 Select c.name, c.city, d.name, (sell.amount)*d.charge as "commission" from sell join client c on c.id = sell.client_id join dealer d on d.id = sell.dealer_id
 
---g
+> Kareem San:
+Можете скинуть 10 лабу у меня ни всп ни тимс не открывабтся
 
+> Miras:
+--g
+SELECT c.name, c.city, d.id, d.name, (s.amount * d.charge) as commission
+FROM dealer d
+    JOIN client c on d.id = c.dealer_id
+    JOIN sell s on c.id = s.client_id
+WHERE d.charge > 0.12;
 
 --h
-
+SELECT c.name, c.city, s.date, s.amount, s.id, d.name, d.charge
+FROM dealer d
+    JOIN client c on d.id = c.dealer_id
+    JOIN sell s on c.id = s.client_id;
 
 --i
+SELECT c.name, c.city, s.date, s.amount, s.id, d.name, d.charge
+FROM dealer d
+    JOIN client c on d.id = c.dealer_id
+    JOIN sell s on c.id = s.client_id
+WHERE c.priority IS NOT NULL
+AND s.amount > 2000;
 
 
 --2
 
 --a
-
+CREATE OR REPLACE VIEW a as
+    SELECT count(DISTINCT client_id) as "number", avg(amount) as "average", sum(amount) as "total", date
+FROM sell
+GROUP BY date;
 
 select count(distinct(client_id)), avg(sell.amount), max(sell.amount) from sell group by sell.date
 
@@ -59,3 +82,5 @@ Select d.location, count(dealer_id), avg((sell.amount)*d.charge), sum((sell.amou
 Select c.city, count(c.city), avg(sell.amount), sum(sell.amount) from sell join client c on c.id = sell.client_id group by c.city
 
 --g
+create view view7 as SELECT c.city from client as c join sell s on c.id = s.client_id where c.priority > s.amount;
+select * from view7;
