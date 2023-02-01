@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Layout</title>
+    <style>
+        .first-sentence {
+            font-weight : 800;
+        }
+        .info {
+            background-color : #0000ff;
+        }
+
+        body {
+            font-family: cursive;
+        }
+        .photo-gallery {
+            padding: 0.2em;
+            background: rgb(255, 254, 217);
+        }
+        .photo {
+            width: 200px;
+            border: 2px solid #FFFFFF;
+            margin: 0.2em;
+        }
+        #greeting {
+            background: rgb(255, 255, 0);
+            border: 2px solid black;
+            font-family: "Comic Sans MS", fantasy;
+            padding: 5px;
+            width: 262px;
+
+            position: absolute;
+            top : 100px;
+            left : 50px;
+            z-index : 2;
+        }
+
+        #creature {
+            position: absolute;
+            top : 100px;
+            left : 50px;
+        }
+        h1 {
+            font-family: fantasy;
+        }
+        #cloud-pic {
+            width: 100px;
+            float : left;
+            margin : 0.2rem;
+        }
+        #cloud-sidebar {
+            float : right;
+            width: 40%;
+            margin : 0.2em;
+            background: rgb(255, 255, 219);
+        }
+    </style>
+</head>
+<body>
+
+<h1>Groupers</h1>
+<div class="info">
+    <p><span class="first-sentence">Groupers are teleosts (ray-finned fishes), typically having a stout body and a large mouth.</span> They can be quite large, and lengths over a meter and weights up to 100 kg are not uncommon, though obviously in such a large group, species vary considerably. They swallow prey rather than biting pieces off it. They do not have many teeth on the edges of their jaws, but they have heavy crushing tooth plates inside the pharynx. They habitually eat fish, octopuses, and crustaceans. Reports of fatal attacks on humans by the largest species, the giant grouper (Epinephelus lanceolatus) are unconfirmed.</p>
+
+    <p><span class="first-sentence">Their mouths and gills form a powerful sucking system that sucks their prey in from a distance.</span> They also use their mouths to dig into sand to form their shelters under big rocks, jetting it out through their gills. Their gill muscles are so powerful, it is nearly impossible to pull them out of a cave if they feel attacked and extend those muscles to lock themselves in.</p>
+</div>
+
+<a href="http://en.wikipedia.org/wiki/Grouper">Read more on Wikipedia</a>
+
+<h1>Boxers are beautiful?</h1>
+
+<div class="photo-gallery">
+
+    <img class="photo" src="https://www.kasandbox.org/programming-images/animals/boxer-getting-tan.png">
+
+    <img class="photo" src="https://www.kasandbox.org/programming-images/animals/boxer-laying-down.png">
+
+    <img class="photo" src="https://www.kasandbox.org/programming-images/animals/boxer-wagging-tongue.png">
+</div>
+<img id="planet" src="https://www.kasandbox.org/programming-images/space/planet.png" width="300">
+
+<div id="greeting">
+    <p>Hello! Welcome to position planet!</p>
+</div>
+
+<img id="creature" src="https://www.kasandbox.org/programming-images/avatars/mr-pink.png">
+
+<h1>What are clouds?</h1>
+
+<img id="cloud-pic" src="https://www.kasandbox.org/programming-images/landscapes/clouds-from-plane.png">
+
+
+<div id="cloud-sidebar">
+    <h5>Why are some clouds yellow?</h5>
+    <p>Yellowish clouds may occur in the late spring through early fall months during forest fire season. The yellow color is due to the presence of pollutants in the smoke. Yellowish clouds caused by the presence of nitrogen dioxide are sometimes seen in urban areas with high air pollution levels.
+    </p>
+</div>
+
+<p>In meteorology, a cloud is a visible mass of liquid droplets or frozen crystals made of water or various chemicals suspended in the atmosphere above the surface of a planetary body. These suspended particles are also known as aerosols and are studied in the cloud physics branch of meteorology.</p>
+
+<p>Terrestrial cloud formation is the result of air in Earth's atmosphere becoming saturated due to either or both of two processes: cooling of the air and adding water vapor. With sufficient saturation, precipitation will fall to the surface.</p>
+
+
+<p><a href="http://en.wikipedia.org/wiki/Cloud">Read more on Wikipedia</a></p>
+
+<h1 style="text-align: center">You're invited!</h1>
+<h2 style="text-align: center">To something!</h2>
+
+<p style="font-size: 1.5em;">The details:</p>
+<ul>
+    <li>Something1</li>
+    <li>Something2</li>
+    <li>Something3</li>
+</ul>
+<p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+    accusantium doloremque laudantium, totam rem aperiam eaque ipsa,
+    quae ab illo inventore veritatis et quasi architecto beatae vitae
+    dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas
+    sit, aspernatur aut odit aut fugit, sed quia consequuntur magni
+    dolores eos, qui ratione voluptatem sequi nesciunt, neque porro
+    quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur
+    adipisci[ng] velit, sed quia non numquam [do] eius modi tempora
+    inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem.
+    Ut enim ad minima veniam, quis nostrum[d] exercitationem ullam
+    corporis suscipit laboriosam, nisi ut aliquid ex ea commodi
+    consequatur? [D]Quis autem vel eum iure reprehenderit, qui in ea
+    voluptate velit esse, quam nihil molestiae consequatur, vel illum,
+    qui dolorem eum fugiat, quo voluptas nulla pariatur? [33] At vero
+    eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis
+    praesentium voluptatum deleniti atque corrupti, quos dolores et quas
+    molestias excepturi sint, obcaecati cupiditate non provident,
+    similique sunt in culpa, qui officia deserunt mollitia animi, id
+    est laborum et dolorum fuga. Et harum quidem rerum facilis est et
+    expedita distinctio. Nam libero tempore, cum soluta nobis est
+    eligendi optio, cumque nihil impedit, quo minus id, quod maxime
+    placeat, facere possimus, omnis voluptas assumenda est, omnis dolor
+    repellendus. Temporibus autem quibusdam et aut officiis debitis aut
+    rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint
+    et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente
+    delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut
+    perferendis doloribus asperiores repellat.</p>
+<p style="font-size: 1.5em;">Guest list:</p>
+<ul>
+    <li>Someone1</li>
+    <li>Someone2</li>
+    <li>Someone3</li>
+</ul>
+</body>
+</html>

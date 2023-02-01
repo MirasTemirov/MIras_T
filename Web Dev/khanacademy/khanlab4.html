@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS text properties</title>
+    <style>
+        body {
+            font-family : Arial;
+        }
+        #flinstones {
+            font-family: serif;
+        }
+
+        #jetsons {
+            font-family: sans-serif;
+        }
+
+        #addams {
+            font-family: monospace;
+        }
+        .big {
+            font-size: 2em;
+        }
+
+        .bigger {
+            font-size: 4em;
+        }
+        .declaration {
+            font-weight: bolder;
+        }
+
+        .quote {
+            font-style : italic;
+        }
+
+        .post-title {
+            font-style: Impact;
+        }
+
+        .post-date {
+            font-family: monospace;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fancy font families</h1>
+    <p>Some fun theme songs of well known TV families...</p>
+
+    <h4>The Flinstones</h4>
+    <p id="flinstones">
+        Meet the Flintstones<br>
+        They're the modern stone age family<br>
+        From the town of Bedrock<br>
+        They're a page right of history</p>
+
+    <h4>The Jetsons</h4>
+    <p id="jetsons">
+        Meet George Jetson,<br>
+        His Boy Elroy,<br>
+        Daughter Judy,<br>
+        Jane, His wife
+    </p>
+
+    <h4>The Addams Family</h4>
+    <p id="addams">
+        They're creepy and they're kooky,<br>
+        mysterious and spooky<br>
+        They're all together ooky,<br>
+        the Addams Family
+    </p>
+
+    <h1>Great Big Words</h1>
+    <h2>by Michael Mark & Tom Chapin</h2>
+
+    <p>When I was a little kid,
+        a "<em class="big">diminutive juvenile</em>," <br>
+        I liked my folks to read to me,
+        I was an <em class="big">"eager bibliophile."</em> <br>
+        Now I love words for how they sound <br>
+        And how they <em class="big">"communicate."</em> <br>
+        Perhaps I should explain myself,
+        that is, <em class="big">"elucidate."</em> <br>
+        Great big words, I like <em class="big">big</em> words. <br>
+        Letter by letter, the <em class="bigger">bigger</em> the better <br>
+        Great big words. La la la la la la la la la la!</p>
+
+    <h2>Famous quotes</h2>
+    <p class="quote">
+        "My mama always said life was like a box of chocolates. You never know what you're gonna get.".
+        <br> - Forrest Gump
+    </p>
+
+    <p class="quote">
+        "May the force be with you."
+        <br>- Star Wars
+    </p>
+
+    <h2>Famous declarations</h2>
+
+    <p class="declaration">
+        I'M BATMAN.
+    </p>
+
+    <p class="declaration">
+        Earth, water, fire. Together, we are CAPTAIN PLANET!
+    </p>
+
+    <div id="blog">
+        <h1>A blog</h1>
+
+        <h3>Contents</h3>
+        <ul id="post-list">
+            <li><a href="#post1">First post!</a></li>
+        </ul>
+
+        <div id="blog-content">
+            <div class="post" id="post1">
+                <h2 class="post-title">First post</h2>
+                <h6 class="post-date">1970-1-1</h6>
+                <p class="post-content">Welcome to my blog. Here I'll be postin' something</p>
+            </div>
+        </div>
+        <input type="text" value="Title of the post" id="inp1">
+        <input type="textarea" value="Content of the post" wrap="wrap" id="inp2">
+        <input type="button" value="POST" onclick="post()">
+    </div>
+    <script>
+        function post() {
+            var blog = document.getElementById("blog-content");
+            var newpost = document.createElement("div");
+            newpost.className = "post";
+            var t = document.createElement("h2");
+            t.className = "post-title";
+            var d = document.createElement("h6");
+            d.className = "post-date";
+            var c = document.createElement("p");
+            c.className = "post-content";
+            var inp1 = document.getElementById("inp1");
+            var inp2 = document.getElementById("inp2");
+            var today = new Date();
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            t.innerHTML = inp1.value;
+            d.innerHTML = date;
+            c.innerHTML = inp2.value;
+            newpost.appendChild(t);
+            newpost.appendChild(d);
+            newpost.appendChild(c);
+            blog.appendChild(newpost);
+            var list = document.getElementById("post-list");
+            var postnum = blog.childElementCount;
+            var a = document.createElement("a");
+            var li = document.createElement("li");
+            newpost.id = "post"+postnum;
+            a.href = "#post"+postnum;
+            a.innerHTML = inp1.value;
+            li.appendChild(a);
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>
