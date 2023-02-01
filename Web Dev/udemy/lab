@@ -1,0 +1,320 @@
+<!DOCTYPE HTML>
+<head>
+    <title>Udacity</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link href="some_css.css" rel="stylesheet">
+    <style>
+        .first {
+            width: 100px;
+        }
+        .second {
+            height: 200px;
+        }
+        .third {
+            margin: 1em;
+        }
+        .fourth {
+            font-size: 2em;
+        }
+        #menu
+        {
+            text-align: center;
+        }
+
+        .item
+        {
+            color: red;
+        }
+
+        .picture
+        {
+            border-radius: 5px;
+        }
+
+        .description
+        {
+            font-style: italic;
+        }
+        body {
+            font-family: Arial;
+        }
+        #to-do-list {
+            width: 400px;
+            background: #2e3d49;
+            padding: 10px 20px;
+        }
+        .title {
+            color: #fff;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .list {
+            list-style-type: circle;
+            text-align: left;
+            font-size: 16px;
+            color: #1fba58;
+            line-height: 24px;
+        }
+        .finished {
+            color: #f4442f;
+            text-decoration: line-through;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #222;
+        }
+        .card {
+            height: 475px;
+            width: 325px;
+            box-shadow: 0px 5px 15px 0px rgba(153,153,153,0.5);
+            border-radius: 4px;
+        }
+        .top {
+            height: 55%;
+            border-radius: 4px 4px 0px 0px;
+            border: 1px solid #ddd;
+            /* Setting a background image */
+            background-image: url(profile-placeholder.svg);
+            padding: 0px 16px;
+        }
+        .name {
+            padding-top: calc(475px * 0.40);
+            margin: 0px;
+        }
+        .status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: 4px;
+
+            border-radius: 5px;
+            background-color: #60D156;
+        }
+        .title {
+            margin-top: 8px;
+        }
+        .middle {
+            height: 5%;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            padding: 0px 16px;
+        }
+        .time {
+            color: #444;
+            font-size: 0.8em;
+            padding-top: 0.2em;
+        }
+        .bottom {
+            height: 40%;
+            border-radius: 0px 0px 4px 4px;
+            border: 1px solid #ddd;
+            padding: 8px 16px;
+        }
+        .profile-action {
+            display: block;
+            width: 100%;
+            height: 32px;
+            /* You could also just set the font family explicitly like we did for the body. */
+            font-family: inherit;
+            font-size: 1em;
+            text-align: left;
+            /* The border-radius property allows for round corners. */
+            border-radius: 4px;
+            border: 0px;
+            background-color: white;
+            /* This is how we changed the cursor to be a hand instead of an arrow. */
+            cursor: pointer;
+        }
+        .profile-action:hover {
+            background-color: #00A5D2;
+            color: white;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Open Sans', sans-serif;
+
+            margin: 0;
+            padding: 0;
+            background: #ddd;
+        }
+        header {
+            font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            color: #697681;
+
+            background: white;
+            height: 85px;
+            padding: 15px;
+        }
+        section {
+            padding: 16px;
+        }
+        .flex-container {
+            display: flex;
+        }
+        .space-between {
+            justify-content: space-between;
+        }
+        .vertical-centerer {
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .header-content {
+            width: 960px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .logo {
+            width: 200px;
+            display: inline-block;
+            margin: 10px 0px;
+        }
+        .menu {
+            list-style: none;
+            list-style-type: none;
+        }
+        .menu > li {
+            display: inline;
+            margin-left: 37.5px;
+        }
+    </style>
+</head>
+<body>
+    <p>paragraph</p>
+    <span>span1</span>
+    <span>span2</span>
+    <p><em>emphasis</em></p>
+    <p><strong>strong</strong></p>
+    <button>button</button>
+    <h1>h1</h1>
+    <h2>h2</h2>
+    <h3>h3</h3>
+    <h4>h4</h4>
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <h1>a div</h1>
+    <div>
+        <p>this div</p>
+    </div>
+    <img src="http://udacity.github.io/fend/images/udacity.png" alt="Udacity Logo">
+    <figure>
+        <img src="some_relative_path" alt="some image">
+        <figcaption>fig. 1 something</figcaption>
+    </figure>
+    <a href="https://commons.wikimedia.org/wiki/File%3AStout_Memorial_Grove_in_Jedediah_Smith_Redwoods_State_Park_in_2011_(22).JPG">
+        a picture
+    </a>
+    <h1>Hottest Jobs in 2016 #2: Web Developer</h1>
+
+    <p>By <strong><em>Christopher Watkins</em></strong>
+    </p>
+
+    <p>January 19, 2016</p>
+
+    <img src="http://i1.wp.com/blog.udacity.com/wp-content/uploads/2016/01/Slack-for-iOS-Upload.jpg?zoom=2&amp;resize=320%2C168" alt="Hottest Jobs in 2016 #2: Web Developer">
+
+    <p>There is a simple reason why Web Developer is such a hot job right now. Put simply, what Web Developers do is create how we experience … the web. If you proceed from the notion that every person who engages with the web would prefer a great experience, then you can say that everyone who engages with the web would prefer that a Web Developer have done a great job. Companies of course know this, so they hire Web Developers to ensure their sites provide great experiences. So, lots of websites and lots of users means lots of demand. LOTS of demand. 🔥
+    </p>
+    <p style="color:green">Let's add some style to this webpage!</p>
+    <div class="first"></div>
+    <div class="second"></div>
+    <div class="third">Hammock ex plaid nulla. Nihil stumptown gastropub, dreamcatcher gochujang franzen cillum cliche keffiyeh pop-up pug small batch knausgaard. Fanny pack elit you probably haven't heard of them before they sold out. Sint elit tofu et veniam irony 3 wolf moon. VHS slow-carb trust fund chartreuse wolf. Qui sed dreamcatcher cronut, hoodie fixie normcore. Gochujang dolor consectetur post-ironic.</div>
+    <div class="fourth">Hammock ex plaid nulla. Nihil stumptown gastropub, dreamcatcher gochujang franzen cillum cliche keffiyeh pop-up pug small batch knausgaard. Fanny pack elit you probably haven't heard of them before they sold out. Sint elit tofu et veniam irony 3 wolf moon. VHS slow-carb trust fund chartreuse wolf. Qui sed dreamcatcher cronut, hoodie fixie normcore. Gochujang dolor consectetur post-ironic.</div>
+    <div id="menu">
+        <h1 class="item">Chicken Clay Pot</h1>
+        <img src="img/clay-pot.jpg" alt="clay pot" class="picture">
+        <p class="description">Crispy rice baked in clay pot topped with chicken and vegetables</p>
+    </div>
+    <div id="to-do-list">
+        <h1 class="title">My To-Do List</h1>
+        <h2 class="title underline">Chores</h2>
+        <ul class="list">
+            <li>load the diswasher</li>
+            <li>vacuum living room</li>
+            <li>take out garbage</li>
+            <li class="finished">sweep the garage</li>
+        </ul>
+        <h2 class="title underline">Homework</h2>
+        <ul class="list">
+            <li class="finished">brainstorm ideas for Science project</li>
+            <li class="finished">finish Calculus 2 problems</li>
+            <li>study for Programming midterm :P</li>
+            <li>finish Project 0 on Udacity FEND</li>
+            <li class="finished">find sources for Biology research paper</li>
+            <li>read first two chapters of The Art of War</li>
+        </ul>
+        <h2 class="title underline">Party</h2>
+        <ul class="list">
+            <li class="finished">send out invitations</li>
+            <li>reserve party room at restaurant</li>
+            <li>order the cake!</li>
+        </ul>
+    </div>
+    <section>
+        <div class="card">
+            <div class="top">
+                <!-- Here we changed the word from 'Stufent' to 'Student' -->
+                <h3 class="name">Udacity Student <span class="status"></span></h3>
+                <p class="title">Learner Extraordinaire</p>
+            </div>
+            <div class="middle">
+                <div class="time">12:34 PM local time</div>
+            </div>
+            <div class="bottom">
+                <button class="profile-action">View preferences</button>
+                <button class="profile-action">Open account settings</button>
+                <button class="profile-action">Edit your profile</button>
+                <button class="profile-action">View your files</button>
+                <button class="profile-action">Set yourself away</button>
+            </div>
+        </div>
+    </section>
+    <header>
+        <div class="vertical-centerer flex-container">
+            <div class="flex-container space-between header-content">
+                <div>
+          <span>
+            <img class="logo" src="Udacity_Logo_SVG_200x35.svg" alt="Udacity Logo">
+          </span>
+                </div>
+                <div>
+                    <ul class="menu">
+                        <li>Nanodegree</li>
+                        <li>Catalog</li>
+                        <li>Classroom</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <p>There! Doesn't that look better?</p>
+
+        <p>
+            There are a lot of different CSS properties - it's going to take some practice and research to learn which to use and when.
+        </p>
+    </section>
+    <div class="container">
+        <div class="portfolio">
+            <h1>My Portfolio</h1>
+            <div class="item">
+                <img src="img/out-cold.png" width="300">
+                <span>This specific design features a 3D floating mountain above a weathered, rugged font to insinuate a winter outdoor theme. This logo would be a perfect fit for an outdoor product company or ski resort.</span>
+            </div>
+            <div class="item">
+                <img src="img/retro-beach.png" width="300">
+                <span>This specific design features a beach-themed fading sunset with palm trees. The fading vertical bars in the sun resemble warmth as it fades away into the sunset.</span>
+            </div>
+        </div>
+    </div>
+</body>
