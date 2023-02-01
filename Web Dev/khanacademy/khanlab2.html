@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Intro to CSS</title>
+  <style>
+    body {
+      margin: 0 0 0 0;
+    }
+
+    #animal {
+      color : #000;
+      background-color: bisque;
+    }
+    #summer {
+      padding : 0.4em;
+      display : inline-block;
+      color : #000000;
+      background-color: yellow;
+      border-radius : 0.5em;
+      border : 0.5em;
+      border-color : rgb(0,0,0);
+    }
+    #winter {
+      padding : 0.4em;
+      display : inline-block;
+      color : #FFFFFF;
+      background-color: darkblue;
+      border-radius : 0.5em;
+      border : 0.5em;
+      border-color : rgb(0,0,0);
+    }
+    .apples {
+      color: red;
+    }
+    .bananas {
+      color: yellow;
+    }
+
+    #antarctic {
+      font-family: Tahoma;
+    }
+
+    header {
+      display : flex;
+      align-items: center;
+      background-color: #222222;
+      margin: 0;
+      padding: 0;
+    }
+
+    #title-antarctic {
+      display: inline-block;
+      width : 30%;
+      text-align: center;
+      color: aliceblue;
+    }
+
+    nav {
+      display: flex;
+      margin-left : 10em;
+      justify-content: space-around;
+      width: 70%;
+    }
+
+    .nav-link {
+      display: block;
+      text-decoration: none;
+      color: aliceblue;
+      font-size: calc(1vw + 0.5em);
+    }
+
+    .nav-link:visited {
+      color: lightcyan;
+    }
+
+    .nav-link:visited {
+      color: lightblue;
+    }
+
+    .nav-link:hover {
+      color: #FFFFFF;
+    }
+
+    #hero-container {
+      display: flex;
+    }
+
+    #descr {
+      padding: 1em;
+      flex : 1;
+    }
+
+    #descr > h2, #descr > h3 {
+      text-align: center;
+    }
+
+    #book-btn {
+      display: block;
+      margin: 10%;
+      width: 80%;
+      font-size: calc(1vw + 0.4em);
+      background-color: #a0bfbf;
+      text-shadow: #222222 0.1em 0.1em 0.1em;
+      color: #DDDDDD;
+    }
+
+    #book-btn:hover {
+      background-color: #c0dfdf;
+      color: #EEEEEE;
+    }
+
+    #book-btn:active {
+      background-color: #e0ffff;
+      color: #FFFFFF;
+    }
+
+    #hero-img {
+      flex : 2;
+    }
+
+    #seal {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="animal">
+    <h1>The coolest creature</h1>
+    <img src="https://purepng.com/public/uploads/large/camel-clip-art-zns.png" alt="your browser can't load a camel picture, Schade">
+    <p>The <strong>Camel</strong> is awesome because <strong>it's awesome, that's it, what you see is what you get.</strong>.</p>
+  </div>
+  <h1>Olaf's favorite seasons</h1>
+
+  <h2 id="summer">Summer</h2>
+  <p>He's a happy snowman, doing what frozen things do in summer. (It melts)</p>
+
+  <h2 id="winter">Winter</h2>
+  <p>He likes to stay in and cuddle. (And melt (duh))</p>
+
+  <h1><strong class="apples">Apples</strong> and <strong class="bananas">Bananas</strong></h1>
+
+  <p>
+    I like to eat eat eat
+    <strong class="apples">apples</strong> and
+    <strong class="bananas">bananas</strong>.<br>
+    I like to eat eat eat
+    <strong class="apples">apples</strong> and
+    <strong class="bananas">bananas</strong>.<br>
+    I like to ate ate ate
+    <strong class="apples">ay-ples</strong> and
+    <strong class="bananas">bay-nay-nays</strong>.<br>
+    I like to ate ate ate
+    <strong class="apples">ay-ples</strong> and
+    <strong class="bananas">bay-nay-nays</strong>.<br>
+    I like to eet eet eet
+    <strong class="apples">ee-ples</strong> and
+    <strong class="bananas">bee-nee-nees</strong>.<br>
+    I like to eet eet eet
+    <strong class="apples">ee-ples</strong> and
+    <strong class="bananas">bee-nee-nees</strong>.<br>
+    I like to ite ite ite
+    <strong class="apples">i-ples</strong> and
+    <strong class="bananas">by-by-nys</strong>.<br>
+    I like to ite ite ite
+    <strong class="apples">i-ples</strong> and
+    <strong class="bananas">by-by-nys</strong>.<br>
+    I like to ote ote ote
+    <strong class="apples">oh-ples</strong> and
+    <strong class="bananas">bo-no-nos</strong>.<br>
+    I like to ote ote ote
+    <strong class="apples">oh-ples</strong> and
+    <strong class="bananas">bo-no-nos</strong>.<br>
+    I like to ute ute ute
+    <strong class="apples">uupples</strong> and
+    <strong class="bananas">bununus</strong>.<br>
+    I like to ute ute ute
+    <strong class="apples">uupples</strong> and
+    <strong class="bananas">bununus</strong>.<br>
+    I like to eat eat eat
+    <strong class="apples">apples</strong> and
+    <strong class="bananas">bananas</strong>.<br>
+  </p>
+
+  <div id="antarctic">
+    <header>
+      <h1 id="title-antarctic">Travel to Antarctica LLC</h1>
+      <nav>
+        <a class="nav-link" href="">Home</a>
+        <a class="nav-link" href="">About</a>
+        <a class="nav-link" href="">Contacts</a>
+        <a class="nav-link" href="">Penguins</a>
+        <a class="nav-link" href="">Lorem Ipsum</a>
+      </nav>
+    </header>
+    <div id="hero-container">
+      <div id ="descr">
+        <h2>Our company is the industry leader</h2>
+        <p>We've been sendin people to the Antarctic for more than
+          2000 years! (unwillingly). Anywho... we're the industry leader.
+          Look at this picture. That's a lot of Adelie penguins right? Now imagine
+        there's a lot more in there! More than 10 or 100 or even 1000 penguins!
+        Even more than 5 (five) penguins! Can you believe that? (but not more
+        than 20! that's for sure).</p>
+        <button id="book-btn">Book a flight to Brazil</button>
+        <!-- Non sequitir! -->
+        <h3>Possible encounters</h3>
+        <ol>
+          <li>Ice</li>
+          <li>Penguins</li>
+          <li>Water</li>
+          <li>WEDDELL SEALS!</li>
+          <li>Rocks</li>
+          <li>Penguins</li>
+          <li>Helicopters</li>
+          <li>Even more penguins</li>
+        </ol>
+        <img id="seal" src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Leptonychotes_weddellii.jpg">
+      </div>
+      <img id="hero-img" src="https://images.unsplash.com/photo-1603548746365-0c7a1583d826?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=422&q=80">
+    </div>
+  </div>
+
+</body>
+</html>
