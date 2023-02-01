@@ -1,1 +1,64 @@
-
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            Intro to HTML
+        </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Some poem</h1>
+        <p>
+            Nature's first green is gold,<br>
+            Her hardest hue to hold.<br>
+            Her early leaf's a flower;<br>
+            But only so an hour.<br>
+            Then leaf subsides to leaf.<br>
+            So Eden sank to grief,<br>
+            So dawn goes down to day.<br>
+            Nothing gold can stay.<br>
+        </p>
+        <h1>Subtitles</h1>
+        <p>
+            <b>Nobody’s born smart.</b> We all start at 0. Can’t talk, can’t walk, certainly can’t do algebra.<br>
+            Adding, reading, writing, riding a bike. Nobody’s good at <strong>anything</strong> at first.<br>
+            There was a time when Einstein couldn’t count to 10.<br>
+            And Shakespeare had to learn his ABCs just like the rest of us.<br>
+            Thankfully, we are born to learn.<br>
+            Slowly. Surely. You stumble, slip, crawl, fall and fail and fall.<br>
+            Frustrating. Confusing. Trying. Struggling.<br>
+            Until one day, you walk.<br>
+            One foot in front of the other. One idea on top of the next.<br>
+            Each wrong answer making your brain a little bit stronger.<br>
+            Failing is just another word for growing. And you keep going.<br>
+            This. is. learning.<br>
+            It’s <em>not</em> that you don’t get it. <br>
+            You just don’t get it, <b>yet</b>.
+            Because the most beautiful, complex concepts in the whole universe<br>
+            are built on basic ideas that anyone, anywhere can understand.<br>
+            Whoever you are, wherever you are.<br>
+        </p>
+        <p>
+            You only have to know one thing:<br>
+            <em>You can learn anything.</em>
+        </p>
+        <h1>List</h1>
+        <input type="text" id="newthing" placeholder="add to the list">
+        <input type="button" id="clik" value="add" onclick="func()">
+        <ol id="old">
+        </ol>
+        <h1>The perfect trip</h1>
+        <p>I would see scenes like...</p><img src="https://yandex.kz/images/search?text=%D0%B2%D0%B8%D0%B4%20%D1%81%20%D0%B2%D0%BE%D0%B4%D0%BE%D0%BF%D0%B0%D0%B4%D0%B0&from=tabbar&pos=1&img_url=http%3A%2F%2Fvsegda-pomnim.com%2Fuploads%2Fposts%2F2022-05%2F1651448540_10-vsegda-pomnim-com-p-vidi-vodopadov-foto-11.jpg&rpt=simage&lr=204340" alt="there should've been a picture of some scenery">
+        <p>And animals like...</p><img src="https://yandex.kz/images/search?pos=0&img_url=http%3A%2F%2Fi.pinimg.com%2Foriginals%2F7f%2F75%2F6c%2F7f756c822f3fb10d57cbd6eec35ac079.png&text=%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9%20%D0%BC%D0%B5%D0%B4%D0%B2%D0%B5%D0%B4%D1%8C&lr=204340&rpt=simage&source=serp" alt="there should've been a picture of some animal">
+        <p>And eat food like...</p><img src="https://yandex.kz/images/search?from=tabbar&text=%D0%BC%D0%BE%D1%80%D0%BE%D0%B6%D0%B5%D0%BD%D0%BE%D0%B5&pos=1&img_url=http%3A%2F%2Fstatic.tildacdn.com%2Ftild6534-3739-4630-a364-383739363034%2Fvarious-of-ice-cream.jpg&rpt=simage&lr=204340"
+        <script>
+            function func() {
+                var ol = document.getElementById('old');
+                var add = document.getElementById('newthing');
+                var new_ = document.createElement('li');
+                new_.innerHTML = add.value;
+                ol.appendChild(new_);
+            }
+        </script>
+    </body>
+</html>
