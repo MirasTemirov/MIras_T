@@ -1,0 +1,107 @@
+1class InputOutString(object):
+    def __init__(self):
+        self.s = ""
+
+    def getString(self):
+        self.s = input()
+    
+    def printString(self):
+        print(self.s.upper())
+
+strObj = InputOutString()
+strObj.getString()
+strObj.printString()
+
+2class Shape(object):
+    def __init__(self):
+        pass
+
+    def area(self):
+        return 0
+
+class Square(Shape):
+    def __init__(self, l):
+        Shape.__init__(self)
+        self.length = l
+
+    def area(self):
+        return self.length*self.length
+
+aSquare= Square(3)
+print aSquare.area()
+
+3class Rectangle():
+    def __init__(self, l, w):
+        self.length = l
+        self.width  = w
+
+    def rectangle_area(self):
+        return self.length*self.width
+
+newRectangle = Rectangle(12, 10)
+print(newRectangle.rectangle_area())
+
+4class Point {
+private:
+	double x, y, point;
+public:
+	void setPoint(double x, double y);
+	double getPoint() const { return point; };
+	
+
+	double pointDistance(int x, int y, double distance) {
+		distance = sqrt((x ^ 2) + (y ^ 2));
+		return distance;
+	}
+
+};
+int main()
+{
+	Point Point1;
+	Point Point2;
+	double distance; 
+
+
+    return 0;
+}
+
+void Point::setPoint(double x, double y)
+{
+	cout << "Give me an x and a y: \n";
+	cin >> x, y;
+}
+
+
+5class Account:
+    
+    def __init__(self, owner, balance=0):
+        self.owner = owner
+        self.balance = balance
+        
+        
+    def __str__(self):
+        return('Account owner: {} \nAccount balance {}'.format(self.owner, self.balance))
+        
+    def deposit(self, deposit_amt):
+        
+        self.balance = self.balance + deposit_amt
+        print('You have been credited with {} and your current balance is {}'.format(deposit_amt, self.balance))
+        
+    def withdraw(self, withdraw_amt):
+         
+            if withdraw_amt > self.balance:
+                print('Funds Unavailable, You have only {} in your account'.format(self.balance))
+            else:
+                self.balance = self.balance - withdraw_amt
+                print('Withdrawal Accepted and your current balance is {}'.format(self.balance))
+                
+            
+            
+    6min = 10
+
+max = 100
+
+primes = [num for num in range(min,max) if 0 not in [num%i for i in range(2,int(num/2)+1)]]
+
+print (primes)
+
