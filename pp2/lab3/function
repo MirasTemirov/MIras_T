@@ -1,0 +1,104 @@
+1def grams_to_ounces(x):
+	return 28.3495231 * x
+
+grams = 10
+ounces = grams_to_ounces(grams)
+print ounces
+
+
+2def f_to_c(f):
+    return (5.0/9.0) * (f - 32)
+
+f = 86
+c = f_to_c(f)
+
+print "{0} fahrenheit is {1} centigrade".format(f, c)
+
+
+
+3def solve(numheads, numlegs):
+    ns = 'No solutions!'
+    for i in range(numheads + 1):
+        j = numheads - i
+        if 2 * i + 4 * j == numlegs:
+            return i, j
+    return ns,ns
+
+numheads = 35
+numlegs = 94
+solutions = solve(numheads, numlegs)
+print solutions
+
+4def prime (mylist):
+        for i in range(2, 8):
+            return filter(lambda x: x == i or x % i, mylist)
+            
+5def toString(List):
+    return ''.join(List)
+
+def permute(a, l, r):
+    if l == r:
+        print (toString(a))
+    else:
+        for i in range(l, r + 1):
+            a[l], a[i] = a[i], a[l]
+            permute(a, l + 1, r)
+
+            a[l], a[i] = a[i], a[l]
+ 
+
+string = "ABC"
+n = len(string)
+a = list(string)
+permute(a, 0, n-1)
+
+6def reverse_words(s):
+    return ' '.join(reversed(s.split()))
+    
+7def has_33(l):
+     return any(l[i+1] == l[i] == 3 for i in range(len(l) - 1))
+     
+8def spy_game(nums):
+    for i in range(0,len(nums)):
+        if nums[i] == 0:
+            for x in range(i+1,len(nums)):
+                if nums[x] == 0:
+                    for y in range(x+1,len(nums)):
+                        if nums[y] == 7:
+                            return True
+                else:
+                    return False
+                    
+ 9pi = 3.1415926535897931
+r= 6.0
+V= 4.0/3.0*pi* r**3
+print('The volume of the sphere is: ',V)
+
+10def unique_list(l):
+  x = []
+  for a in l:
+    if a not in x:
+      x.append(a)
+  return x
+
+print(unique_list([1,2,3,3,3,3,4,5])) 
+
+11def isPalindrome(string):
+	left_pos = 0
+	right_pos = len(string) - 1
+	
+	while right_pos >= left_pos:
+		if not string[left_pos] == string[right_pos]:
+			return False
+		left_pos += 1
+		right_pos -= 1
+	return True
+print(isPalindrome('aza')) 
+
+
+12def histogram(list):
+        for x in range(0,len(list)):
+                print('X' * list[x])
+        return
+li=[int(x) for x in input().split()]
+histogram(li)
