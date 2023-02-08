@@ -1,0 +1,211 @@
+:root{
+    --facebook-color: #0165E1;
+}
+
+html{
+    padding: 0px;
+}
+body{
+    background-color: #f0f2f5;
+    padding: 0px;
+}
+
+#content{
+    padding: 0%;
+    margin: 0px;
+    min-height:100%;
+}
+
+.rightside{
+    display: flex;
+    align-items:baseline;
+    flex-direction: column;
+    justify-content: center;
+}
+.logo8slogan{
+    margin-top: 11%;
+    margin-left: 17.5%;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo{
+    position:absolute;
+    transform: translateX(-28px);
+    height: 105px;
+}
+
+p{
+    margin: 0;
+}
+.rightside p{
+    margin-left: 57%;
+}
+
+.slogan{
+    position: absolute;
+    width:500px;
+    margin-top:100px;
+}
+
+.auth{
+    display: flex;
+    height: 350px;
+    width:380px;
+    background-color: white;
+    box-shadow: 0px 5px 10px 1px rgb(200,200,200);
+    margin-left: 55%;
+    transform:translateY(-30px);
+    border-radius: 10px;
+    /*'Content' is a parent */
+    /* Center items in Ox axis */
+    align-items:center;
+    /* justify-content: center; */
+    flex-direction: column;
+    /* flex-flow: column wrap; */
+}
+
+/* Auth. form */
+.auth form{
+    width: inherit;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.login, .password{
+    /* display: block; */
+    width: 330px;
+    height: 22px;
+    padding: 16px 14px;
+    font-size: large;
+    border-radius: 5px;
+    color: rgb(188, 188, 188);
+    border-width: 0.5px;
+}
+.submit{
+    background-color: var(--facebook-color);
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    width: 360px;
+    height: 52px;
+    /* padding: 16px 14px; */
+    font-size: large;
+}
+
+
+hr{
+    width: 90%;
+    /* background-color: rgb(200,200,200); */
+    /* border: none; */
+    margin-top: 1.5em;
+    border-color: rgb(210,210,210);
+    filter: opacity(20.5%);
+}
+
+.createAcc{
+    background-color: rgb(74, 162, 39);
+    color: white;
+    height: 50px;
+    width: 180px;
+    margin-top: 10px;
+    font-size: large;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+a:visited, a:link{
+    color: #0165E1;
+    text-decoration: none;
+}
+
+p a:link, p a:visited{
+    color: black;
+    font-weight: bold;
+}
+
+.submit:hover, .createAcc:hover{
+    cursor: pointer;
+    filter: brightness(99%);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+
+.login:focus, .password:focus{
+    color: black;
+    
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-flow:column;
+    margin-top: 13%;
+    width: auto;
+    height: 190px;
+    background-color: white;
+    color:rgb(200,200,200)
+}
+
+.footer-info{
+    width: 80%;
+    height: auto;
+    display: flex;
+    align-items:flex-start;
+    justify-items: center;
+    flex-flow: column;
+    overflow: hidden;
+}
+
+.footer-info a, .footer-info p a{
+    color: inherit;
+    font-size: 14px;
+    font-weight: 100;
+}
+.footer-info p{
+    word-spacing: 5px;
+}
+/* We can do list horizontaly in different ways, first is to assign to the <li> "inline-block" property
+second is for ul, assign: display:flex and if it's gonna wrap then flex-wrap:wrap */
+
+/* First is easy, bit harder to maintain than flexbox(but it is more flexible maybe) */
+/* li{
+    display: inline-block;
+    list-style: none;
+} */
+
+
+li{
+    display: inline-block;
+    list-style: none;
+    margin: auto 5px;
+}
+
+ul, hr{
+    padding-left: 0px;
+}
+
+hr{
+    margin:0px;
+}
+
+.langs{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+/* li{
+    list-style: none;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    
+} */
