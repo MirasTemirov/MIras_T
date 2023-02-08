@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Intagram</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <content>
+        <div class="phones">
+            <img class='phone' src="phone.png">
+        </div>
+        <div class="reg">
+            <div class="log-in">
+                <a href='https://www.instagram.com/'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1024px-Instagram_logo.svg.png" alt="Intagramm logo" class="logo"></a>
+                <form action="">
+                    <input class="login" placeholder="Phone number, username, or email">
+                    <input type="password"class="password" placeholder="Password">
+                    <input type="submit" value="Log in" class="log-in-btn">
+                </form>
+                
+                <div class="separator">
+                    <hr>
+                    <p>OR</p>
+                    <hr>
+                </div>
+                
+                <div class="bottom">
+                    <p class="fb-login">Log in with Facebook</p>
+                    <a class="reset-password"href="https://www.instagram.com/accounts/password/reset/">Forgot password?</a>
+                </div>
+
+            </div>
+            <div class="sign-up">
+                <p>Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/">Sign up</a></p>
+            </div>
+            <p>Get the app</p>
+            <div class="get-app">
+                <img class='get-icons googleplay'src="https://assets.stickpng.com/images/5a902dbf7f96951c82922875.png">
+                <img class='get-icons microsoft'src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Get_it_from_Microsoft_Badge.svg/2560px-Get_it_from_Microsoft_Badge.svg.png">
+            </div>
+        </div>
+    </content>
+    <footer>
+        <ul>
+            <li><a href="https://www.instagram.com/">Meta</a></li>
+            <li><a href="https://www.instagram.com/">About</a></li>
+            <li><a href="https://www.instagram.com/">Blog</a></li>
+            <li><a href="https://www.instagram.com/">Jobs</a></li>
+            <li><a href="https://www.instagram.com/">Help</a></li>
+            <li><a href="https://www.instagram.com/">API</a></li>
+            <li><a href="https://www.instagram.com/">Privacy</a></li>
+            <li><a href="https://www.instagram.com/">Terms</a></li>
+            <li><a href="https://www.instagram.com/">Top Accounts</a></li>
+            <li><a href="https://www.instagram.com/">Locations</a></li>
+            <li><a href="https://www.instagram.com/">Instagram Lite</a></li>
+            <li><a href="https://www.instagram.com/">Contact Uploading & Non-Users</a></li>
+        </ul>
+
+        <div>
+            <select>
+                <option>Kazakh</option>
+                <option>Russian</option>
+                <option>English</option>
+                <option>Chinese</option>
+                <option>Japanese</option>
+                <option>Arabic</option>
+                <option>Hindi</option>
+                <option>France</option>
+            </select>
+
+            <p>© 2023 Instagram from Meta</p>
+        </div>
+    </footer>
+</body>
+
+</html>
