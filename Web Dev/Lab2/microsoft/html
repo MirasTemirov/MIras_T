@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Microsoft</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="https://www.microsoft.com/ru-kz/"><img class='logo' src="icon.png"></a>
+            <div class="nav-items">
+                <ul>
+                    <li><a href='https://www.microsoft.com/microsoft-365'>microsoft 365</a></li>
+                    <li><a href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'>Office</a></li>
+                    <li><a href='https://www.microsoft.com/en-us/windows/'>Windows</a></li>
+                    <li><a href='https://support.microsoft.com/en-us'>Поддержка</a></li>
+                </ul>
+                <ul>
+                    <li class="products">
+                        <p>Все продукты Microsoft</p><img class="icons"
+                            src="https://www.svgrepo.com/download/80156/down-arrow.svg">
+                    </li>
+                    <li class="search">
+                        <p>Поиск</p><img class="icons" src="https://svgsilh.com/svg_v2/1093183.svg">
+                    </li>
+                    <li class="cart">
+                        <p>Корзина</p><img class="icons" src="https://www.svgrepo.com/show/58322/shopping-cart.svg">
+                    </li>
+                    <li class="log-in">
+                        <p>Войти</p><img class="icons" src="http://cdn.onlinewebfonts.com/svg/img_514901.png">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <content>
+        <div class="main">
+            <div class="intro">
+                <h1>Microsoft 365</h1>
+                <p>Приложения Office премиум, дополнительное облачное хранилище, <br>
+                    продвинутые инструменты обеспечения безопасности - все в одной <br>
+                    удобной подписке
+                </p>
+                <div class="buttons">
+                    <button class="version-6p main-button">До 6 человек <img
+                            src="https://www.freeiconspng.com/thumbs/arrow-icon/right-arrow-icon-27.png"></button>
+
+
+
+                    <button class="version-1p main-button">Для 1 человека <img
+                            src="https://www.freeiconspng.com/thumbs/arrow-icon/right-arrow-icon-27.png"></button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="other">
+            <div class="other-1 other-box">
+                <img src="https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4IxbF?ver=e92f&q=90&m=2&h=768&w=1024&b=%23FFFFFFFF&aim=true"
+                    alt="microsoft teams">
+                <h2>Microsoft Teams</h2>
+                <p>Общайтесь, проводите собрания, звоните и сотрудничайте.</p>
+                <div class="learn-more">
+                    <a
+                        href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiKgdfBjoH9AhUpmIsKHdfICU0QFnoECA4QAQ&url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fmicrosoft-teams%2Fgroup-chat-software&usg=AOvVaw1O-m16CfvBHYqQ992CgXCZ">Подробнее</a>
+                    <img src="https://www.freeiconspng.com/thumbs/blue-arrow-png/blue-arrow-png-22.png">
+                </div>
+            </div>
+            <div class="other-2 other-box">
+                <img src="https://www.lifewire.com/thmb/NSE8G8rmX6Yxf3sxckcXhW7puVw=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/001-what-is-microsoft-edge-4151828-b50ba4a178d54bb287c62419dd80c6d7.jpg"
+                    alt="Microsoft-edge image">
+                <h2>Microsoft Edge</h2>
+                <p>Потрясающая производительность, больше<br>
+                    конфиденциальности, продуктивности и<br>
+                    дополнительных возможностей.
+                </p>
+                <div class="learn-more">
+                    <a
+                        href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwidu-najoH9AhWS6CoKHTTUCggQFnoECAoQAQ&url=https%3A%2F%2Fwww.microsoft.com%2Fen-us%2Fedge&usg=AOvVaw00nqzEG85NzCdwPK1TK20-">Скачать</a>
+                    <img src="https://www.freeiconspng.com/thumbs/blue-arrow-png/blue-arrow-png-22.png">
+                </div>
+            </div>
+
+            <div class="other-3 other-box">
+                <img src="https://i.pcmag.com/imagery/articles/06U6L8XsBRWY8MSji39fySu-13..v1619534517.jpg"
+                    alt="one drive image">
+                <h2>Microsoft OneDrive</h2>
+                <p>Сохраняйте свои файлы и фотографий на<br>
+                    OneDrive-они будут доступны с любого устройства<br>
+                    и где угодно.
+                </p>
+                <div class="learn-more">
+                    <a
+                        href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjQvdP0joH9AhUNxYsKHS2ED5EQFnoECBMQAQ&url=https%3A%2F%2Fwww.microsoft.com%2Fen-ww%2Fmicrosoft-365%2Fonedrive%2Fonline-cloud-storage&usg=AOvVaw3aRfUxSLmWLT1MTkT5i5iA">Подробнее</a>
+                    <img src="https://www.freeiconspng.com/thumbs/blue-arrow-png/blue-arrow-png-22.png">
+                </div>
+            </div>
+            <div class="other-4 other-box">
+                <img src="https://www.pcworld.com/wp-content/uploads/2022/12/dsc06114-100727764-orig-3.jpg?quality=50&strip=all&w=1024"
+                    alt="windows-10 iamge">
+                <h2>Обновление Windows 10</h2>
+                <p>Предоставляя новые функций, которые помогут вам<br>
+                    успевать больше, общаться чаще и экономить<br>
+                    время.</p>
+                <div class="learn-more">
+                    <a
+                        href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjPn_iGj4H9AhUHiYsKHfInANYQFnoECBgQAQ&url=https%3A%2F%2Fwww.microsoft.com%2Fsoftware-download%2Fwindows10&usg=AOvVaw3TeDF3zlRT-8GgCsmtGtR7">Узнать
+                        больше</a>
+                    <img src="https://www.freeiconspng.com/thumbs/blue-arrow-png/blue-arrow-png-22.png">
+                </div>
+            </div>
+        </div>
+    </content>
+</body>
+
+</html>
