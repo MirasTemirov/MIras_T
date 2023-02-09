@@ -28,7 +28,7 @@ class Square(Shape):
         return self.length*self.length
 
 aSquare= Square(3)
-print aSquare.area()
+print(aSquare.area())
 
 3class Rectangle():
     def __init__(self, l, w):
