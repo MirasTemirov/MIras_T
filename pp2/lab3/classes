@@ -41,36 +41,28 @@ print(aSquare.area())
 newRectangle = Rectangle(12, 10)
 print(newRectangle.rectangle_area())
 
-4class Point {
-private:
-	double x, y, point;
-public:
-	void setPoint(double x, double y);
-	double getPoint() const { return point; };
-	
+4import math
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def show(self):
+        print("x:", self.x, "y:", self.y)
+    def move(self):
+        dx = int(input())
+        dy = int(input())
+        self.x = dx
+        self.y = dy
+    def dist(self):
+        print(math.sqrt(math.pow(self.x, 2) + math.pow(self.y, 2)))
 
-	double pointDistance(int x, int y, double distance) {
-		distance = sqrt((x ^ 2) + (y ^ 2));
-		return distance;
-	}
-
-};
-int main()
-{
-	Point Point1;
-	Point Point2;
-	double distance; 
-
-
-    return 0;
-}
-
-void Point::setPoint(double x, double y)
-{
-	cout << "Give me an x and a y: \n";
-	cin >> x, y;
-}
-
+x = int(input())
+y = int(input())
+p = Point(x, y)
+p.show()
+p.move()
+p.show()
+p.dist()
 
 5class Account:
     
