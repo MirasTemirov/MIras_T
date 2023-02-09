@@ -41,28 +41,25 @@ print(aSquare.area())
 newRectangle = Rectangle(12, 10)
 print(newRectangle.rectangle_area())
 
-4import math
-class Point:
+4class Point(object):
     def __init__(self, x, y):
         self.x = x
         self.y = y
-    def show(self):
-        print("x:", self.x, "y:", self.y)
-    def move(self):
-        dx = int(input())
-        dy = int(input())
-        self.x = dx
-        self.y = dy
-    def dist(self):
-        print(math.sqrt(math.pow(self.x, 2) + math.pow(self.y, 2)))
 
-x = int(input())
-y = int(input())
-p = Point(x, y)
-p.show()
-p.move()
-p.show()
-p.dist()
+    def dist(self, other):
+        return ((self.x - other.x) ** 2 + (self.y - other.y) ** 2) ** 0.5
+
+
+p1_x = int(input("p1.x: "))
+p1_y = int(input("p1.y: "))
+
+p2_x = int(input("p2.x: "))
+p2_y = int(input("p2.y: "))
+
+p1 = Point(p1_x, p1_y)
+p2 = Point(p2_x, p2_y)
+
+print(p1.dist(p2))
 
 5class Account:
     
