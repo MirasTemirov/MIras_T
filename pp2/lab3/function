@@ -3,7 +3,7 @@
 
 grams = 10
 ounces = grams_to_ounces(grams)
-print ounces
+print(ounces)
 
 
 2def f_to_c(f):
@@ -27,7 +27,7 @@ print "{0} fahrenheit is {1} centigrade".format(f, c)
 numheads = 35
 numlegs = 94
 solutions = solve(numheads, numlegs)
-print solutions
+print(solutions)
 
 4def prime (mylist):
         for i in range(2, 8):
