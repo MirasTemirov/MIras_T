@@ -97,7 +97,7 @@ void Point::setPoint(double x, double y)
                 
             
             
-    6min = 10
+    min = 10
 
 max = 100
 
