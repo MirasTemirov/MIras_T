@@ -1,0 +1,77 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  if ("0") {
+    alert( 'Hello' );
+  }
+</script>
+</body>
+</html>
+
+
+2<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Name of Javascript</title>
+</head>
+<body>
+<script>
+  "use strict";
+  const name = prompt("What's the \"official\" name of JavaScript?", "")
+  if(name === "ECMAScript")
+    alert("Right")
+  else
+    alert("You don't know?\n\"ECMAScript\"!")
+</script>
+</body>
+</html>
+
+
+3<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  'use strict';
+  const n = Number(prompt('Insert some number:', '0'));
+
+  if(n > 0)
+    alert(1)
+  else if(n < 0)
+    alert(-1)
+  else
+    alert(0)
+</script>
+</body>
+</html>
+
+
+4<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let result;
+
+  result = (a + b < 4) ? 'Below' : 'Over';
+  // if (a + b < 4) {
+  //   result = 'Below';
+  // } else {
+  //   result = 'Over';
+  // }
+</script>
+
+</body>
+</html>
