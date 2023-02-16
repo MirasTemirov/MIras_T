@@ -1,0 +1,87 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+  //same results
+  //function 1
+  function checkAge(age) {
+    if (age > 18) {
+      return true;
+    } else {
+      // ...
+      return confirm('Did parents allow you?');
+    }
+  }
+
+  //function 2
+  // function checkAge(age) {
+  //   if (age > 18) {
+  //     return true;
+  //   }
+  //   // ...
+  //   return confirm('Did parents allow you?');
+  // }
+
+  const age = Number(prompt('How old are you?', 0));
+
+  alert(checkAge(age));
+
+</script>
+</body>
+</html>
+
+
+2<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let age = 18;
+  function checkAge(age) {
+    if (age > 18) {
+      return true;
+    } else {
+      return confirm('Did parents allow you?');
+    }
+  }
+
+  let result = checkAge(age);
+
+  //variant 1
+  result = age > 18 ? true : confirm('Did parents allow you?')
+
+  //variant 2
+
+  result = age > 18 || confirm('Did parents allow you?')
+
+</script>
+</body>
+</html>
+
+
+3<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function min(a, b){
+    if(a < b)
+      return a;
+    return b;
+  }
+
+  alert(min(45, 32));
+</script>
+</body>
+</html>
