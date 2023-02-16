@@ -1,0 +1,241 @@
+1.1undefined (no strict mode)
+An error (strict mode).
+1.2Why? Let’s replay what’s happening at line (*):
+
+When a property of str is accessed, a “wrapper object” is created.
+In strict mode, writing into it is an error.
+Otherwise, the operation with the property is carried on, the object gets the test property, but after that the “wrapper object” disappears, so in the last line str has no trace of the property.
+
+2Numbers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = +prompt('Enter first number')
+  let b = +prompt('Enter second number')
+  alert(`Sum is ${a+b}`)
+</script>
+</body>
+</html>
+
+
+3Srtings
+3.1 function ucFirst(str) {
+  if (!str) return str;
+
+  return str[0].toUpperCase() + str.slice(1);
+}
+
+alert( ucFirst("john") ); // John
+
+3.2function checkSpam(str) {
+  let lowerStr = str.toLowerCase();
+
+  return lowerStr.includes('viagra') || lowerStr.includes('xxx');
+}
+
+alert( checkSpam('buy ViAgRA now') );
+alert( checkSpam('free xxxxx') );
+alert( checkSpam("innocent rabbit") );
+3.3function extractCurrencyValue(str) {
+  return +str.slice(1);
+}
+
+4Arrays
+4.1let fruits = ["Apples", "Pear", "Orange"];
+
+let shoppingCart = fruits;
+
+shoppingCart.push("Banana");
+
+alert( fruits.length ); // 4
+That’s because arrays are objects. So both shoppingCart and fruits are the references to the same array.
+
+4.2let styles = ["Jazz", "Blues"];
+styles.push("Rock-n-Roll");
+styles[Math.floor((styles.length - 1) / 2)] = "Classics";
+alert( styles.shift() );
+styles.unshift("Rap", "Reggae");
+
+4.3let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+})
+
+arr[2](); // a,b,function(){...}
+
+4.4function sumInput() {
+
+  let numbers = [];
+
+  while (true) {
+
+    let value = prompt("A number please?", 0);
+
+    // should we cancel?
+    if (value === "" || value === null || !isFinite(value)) break;
+
+    numbers.push(+value);
+  }
+
+  let sum = 0;
+  for (let number of numbers) {
+    sum += number;
+  }
+  return sum;
+}
+
+alert( sumInput() );
+
+4.5function getMaxSubSum(arr) {
+  let maxSum = 0;
+  let partialSum = 0;
+
+  for (let item of arr) { // for each item of arr
+    partialSum += item; // add it to partialSum
+    maxSum = Math.max(maxSum, partialSum); // remember the maximum
+    if (partialSum < 0) partialSum = 0; // zero if negative
+  }
+
+  return maxSum;
+}
+
+alert( getMaxSubSum([-1, 2, 3, -9]) ); // 5
+alert( getMaxSubSum([-1, 2, 3, -9, 11]) ); // 11
+alert( getMaxSubSum([-2, -1, 1, 2]) ); // 3
+alert( getMaxSubSum([100, -9, 2, -3, 5]) ); // 100
+alert( getMaxSubSum([1, 2, 3]) ); // 6
+alert( getMaxSubSum([-1, -2, -3]) ); // 0
+
+5array method
+5.1function camelize(str) {
+  return str
+    .split('-') // splits 'my-long-word' into array ['my', 'long', 'word']
+    .map(
+      // capitalizes first letters of all array items except the first one
+      // converts ['my', 'long', 'word'] into ['my', 'Long', 'Word']
+      (word, index) => index == 0 ? word : word[0].toUpperCase() + word.slice(1)
+    )
+    .join(''); // joins ['my', 'Long', 'Word'] into 'myLongWord'
+}
+
+5.2function filterRange(arr, a, b) {
+  // added brackets around the expression for better readability
+  return arr.filter(item => (a <= item && item <= b));
+}
+
+let arr = [5, 3, 8, 1];
+
+let filtered = filterRange(arr, 1, 4);
+
+alert( filtered ); // 3,1 (matching values)
+
+alert( arr ); // 5,3,8,1 (not modified)
+
+5.3function filterRangeInPlace(arr, a, b) {
+
+  for (let i = 0; i < arr.length; i++) {
+    let val = arr[i];
+
+    // remove if outside of the interval
+    if (val < a || val > b) {
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+
+}
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // removed the numbers except from 1 to 4
+
+alert( arr ); // [3, 1]
+
+5.4let arr = [5, 2, 1, -10, 8];
+
+arr.sort((a, b) => b - a);
+
+alert( arr );
+
+5.5function copySorted(arr) {
+  return arr.slice().sort();
+}
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+let sorted = copySorted(arr);
+
+alert( sorted );
+alert( arr );
+
+5.6function Calculator() {
+
+  this.methods = {
+    "-": (a, b) => a - b,
+    "+": (a, b) => a + b
+  };
+
+  this.calculate = function(str) {
+
+    let split = str.split(' '),
+      a = +split[0],
+      op = split[1],
+      b = +split[2];
+
+    if (!this.methods[op] || isNaN(a) || isNaN(b)) {
+      return NaN;
+    }
+
+    return this.methods[op](a, b);
+  };
+
+  this.addMethod = function(name, func) {
+    this.methods[name] = func;
+  };
+}
+
+5.7let john = { name: "John", age: 25 };
+let pete = { name: "Pete", age: 30 };
+let mary = { name: "Mary", age: 28 };
+
+let users = [ john, pete, mary ];
+
+let names = users.map(item => item.name);
+
+alert( names ); // John, Pete, Mary
+
+map and set
+1function unique(arr) {
+  return Array.from(new Set(arr));
+}
+2function aclean(arr) {
+  let map = new Map();
+
+  for (let word of arr) {
+    // split the word by letters, sort them and join back
+    let sorted = word.toLowerCase().split('').sort().join(''); // (*)
+    map.set(sorted, word);
+  }
+
+  return Array.from(map.values());
+}
+
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+alert( aclean(arr) );
+
+3let map = new Map();
+
+map.set("name", "John");
+
+let keys = Array.from(map.keys());
+
+keys.push("more");
+
+alert(keys); // name, more
