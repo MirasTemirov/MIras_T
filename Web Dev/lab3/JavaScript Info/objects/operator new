@@ -1,0 +1,88 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function isEmpty(object){
+    for(let key in object){
+      return false;
+    }
+
+    return true;
+  }
+
+  let schedule = {};
+
+  alert( isEmpty(schedule) ); // true
+
+  schedule["8:30"] = "get up";
+
+  alert( isEmpty(schedule) ); // false
+</script>
+</body>
+</html>
+
+
+2<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function Calculator(){
+    this.a = 0;
+    this.b = 0;
+    this.read = () => {
+      this.a = Number(prompt('Enter first number: ', ''));
+      this.b = Number(prompt('Enter second number: ', ''));
+    };
+
+    this.sum = () => {
+      return `${this.a + this.b}`;
+    };
+
+    this.mul = () => {
+      return `${this.a * this.b}`;
+    }
+  }
+
+  let calculator = new Calculator();
+  calculator.read();
+
+  alert( "Sum=" + calculator.sum() );
+  alert( "Mul=" + calculator.mul() );
+</script>
+</body>
+</html>
+
+
+
+3<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function Accumulator(initialValue){
+    this.value = initialValue;
+    this.read = function () {
+      this.value += Number(prompt('Write some number', ''));
+    }
+  }
+
+  let accumulator = new Accumulator(1); // initial value 1
+
+  accumulator.read(); // adds the user-entered value
+  accumulator.read(); // adds the user-entered value
+
+  alert(accumulator.value); // shows the sum of these values
+</script>
+</body>
+</html>
