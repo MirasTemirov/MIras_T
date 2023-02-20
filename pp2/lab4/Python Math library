@@ -1,0 +1,30 @@
+1import math
+n = int(input())
+
+def radiants(n):
+    x = math.pi
+    b = n*x/180
+    print(b)
+
+radiants(n)
+
+
+2base_1 = 5
+base_2 = 6
+height = float(input("Height: "))
+base_1 = float(input('Base, first value: '))
+base_2 = float(input('Base, second value: '))
+area = ((base_1 + base_2) / 2) * height
+print("Expected Output:", area)
+
+3from math import tan, pi
+n_sides = int(input("Input number of sides: "))
+s_length = float(input("Input the length of a side: "))
+p_area = n_sides * (s_length ** 2) / (4 * tan(pi / n_sides))
+print("The area of the polygon is: ",p_area)
+
+
+4base = float(input('Length of base: '))
+height = float(input('Height of parallelogram: '))
+area = base * height
+print("Expected Output: ", area)
