@@ -1,96 +1,98 @@
 1import re
-def text_match(text):
-        patterns = '^a(b*)$'
-        if re.search(patterns,  text):
-                return 'Found a match!'
-        else:
-                return('Not matched!')
-print(text_match("ac"))
-print(text_match("abc"))
-print(text_match("a"))
-print(text_match("ab"))
-print(text_match("abb"))
+
+pattern = r'a[b]*'
+text = 'abb abbb abbbb abc'
+matches = re.findall(pattern, text)
+
+print(matches) # Output: ['abb', 'abbb', 'abbbb', 'a']
+
 
 2import re
-def text_match(text):
-        patterns = 'ab{2,3}'
-        if re.search(patterns,  text):
-                return 'Found a match!'
-        else:
-                return('Not matched!')
-print(text_match("ab"))
-print(text_match("aabbbbbc"))
+
+pattern = r'a[b]{2,3}'
+text = 'abb abbb abbbb abc'
+matches = re.findall(pattern, text)
+
+print(matches) # Output: ['abbb']
 
 3import re
-def text_match(text):
-        patterns = '^[a-z]+_[a-z]+$'
-        if re.search(patterns,  text):
-                return 'Found a match!'
-        else:
-                return('Not matched!')
 
-print(text_match("aab_cbbbc"))
-print(text_match("aab_Abbbc"))
-print(text_match("Aaab_abbbc"))
+pattern = r'[a-z]+_[a-z]+'
+text = 'hello_world abc_defg pqr_stu_vwx'
+matches = re.findall(pattern, text)
+
+print(matches) # Output: ['hello_world', 'abc_defg', 'pqr_stu_vwx']
+
 
 
 4import re
-def text_match(text):
-        patterns = '[A-Z]+[a-z]+$'
-        if re.search(patterns, text):
-                return 'Found a match!'
-        else:
-                return('Not matched!')
-print(text_match("AaBbGg"))
-print(text_match("Python"))
-print(text_match("python"))
-print(text_match("PYTHON"))
-print(text_match("aA"))
-print(text_match("Aa"))
+
+pattern = r'[A-Z][a-z]+'
+text = 'Hello world, How Are You?'
+matches = re.findall(pattern, text)
+
+print(matches) # Output: ['Hello', 'How', 'Are', 'You']
 
 
 5import re
-def text_match(text):
-        patterns = 'a.*?b$'
-        if re.search(patterns,  text):
-                return 'Found a match!'
-        else:
-                return('Not matched!')
 
-print(text_match("aabbbbd"))
-print(text_match("aabAbbbc"))
-print(text_match("accddbbjjjb"))
+pattern = r'a.*b$'
+text = 'abc abd aeb abef'
+matches = re.findall(pattern, text)
+
+print(matches) # Output: ['abc', 'abd']
+
 
 6import re
-text = 'Python Exercises, PHP exercises.'
-print(re.sub("[ ,.]", ":", text))
+
+pattern = r'[ ,.]'
+text = 'hello, world. how are you?'
+replaced_text = re.sub(pattern, ':', text)
+
+print(replaced_text) # Output: 'hello:world:how:are:you?'
 
 
-7def snake_to_camel(word):
-        import re
-        return ''.join(x.capitalize() or '_' for x in word.split('_'))
 
-print(snake_to_camel('python_exercises'))
+7import re
 
-import re
-text = "PythonTutorialAndExercises"
-print(re.findall('[A-Z][^A-Z]*', text))
+def snake_to_camel(text):
+    pattern = r'(_\w)'
+    camel_text = re.sub(pattern, lambda x: x.group(1)[1:].upper(), text)
+    return camel_text
 
-9import re
-def capital_words_spaces(str1):
-  return re.sub(r"(\w)([A-Z])", r"\1 \2", str1)
+text = 'hello_world_how_are_you'
+camel_text = snake_to_camel(text)
 
-print(capital_words_spaces("Python"))
-print(capital_words_spaces("PythonExercises"))
-print(capital_words_spaces("PythonExercisesPracticeSolution"))
+print(camel_text) # Output: 'helloWorldHowAreYou'
+
 
 8import re
-text = "PythonTutorialAndExercises"
-print(re.findall('[A-Z][^A-Z]*', text))
 
-10def camel_to_snake(text):
-        import re
-        str1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', text)
-        return re.sub('([a-z0-9])([A-Z])', r'\1_\2', str1).lower()
+pattern = r'[A-Z][a-z]*'
+text = 'HelloWorld,HowAreYou?'
+matches = re.findall(pattern, text)
 
-print(camel_to_snake('PythonExercises'))
+print(matches) # Output: ['Hello', 'World', 'How', 'Are', 'You']
+
+9import re
+
+pattern = r'(?<!^)(?=[A-Z])'
+text = 'HelloWorld,HowAreYou?'
+replaced_text = re.sub(pattern, ' ', text)
+
+print(replaced_text) # Output: 'Hello World, How Are You?'
+
+
+
+10import re
+
+def camel_to_snake(text):
+    pattern = r'(?<!^)(?=[A-Z])'
+    snake_text = re.sub(pattern, '_', text).lower()
+    return snake_text
+
+text = 'helloWorldHowAreYou'
+snake_text = camel_to_snake(text)
+
+print(snake_text) # Output: 'hello_world_how_are_you'
+
