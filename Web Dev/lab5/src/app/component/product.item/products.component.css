@@ -1,1 +1,75 @@
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+}
 
+.item{
+  width: 90%;
+  margin: 30px;
+  padding: 25px;
+  display: inline-table;
+  border-style: solid;
+  border-color: orangered;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.picture{
+  height: 160px;
+  width: auto;
+  display: block;
+}
+
+.button{
+  display: block;
+  text-align: center;
+  text-decoration: None;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  border-style: solid;
+  margin-bottom: 14px;
+}
+
+.buy_link{
+  background: limegreen;
+  border-color: limegreen;
+}
+
+.telegram_share{
+  background: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+.whatsapp_share{
+  background: yellowgreen;
+  border-color: yellowgreen;
+}
+
+.description{
+  padding: 12px;
+  margin-bottom: 40px;
+  border-color: darkcyan;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+.heading{
+  text-align: center;
+  color: blueviolet;
+  font-size: 60px;
+}
+
+.like_label{
+  margin-top: 10px;
+  padding-right: 15px;
+  font-size: 19px;
+}
+
+.like_button{
+  background: pink;
+  color: white;
+  border-radius: 5px;
+}
