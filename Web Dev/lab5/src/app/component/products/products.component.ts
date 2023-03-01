@@ -19,24 +19,23 @@ export class ProductsComponent implements OnInit {
     this.categories = data;
     // this.products = [
     //   {
-    //     name: 'Шахматный набор "Орловская Ладья P-1"',
-    //     description: 'Дерево хвойных, лиственных пород. Фанера, рисунок (шелкография), покрытие лак. Шахматные обиходные деревянные фигуры, покрытие лак — 32 шт. (16 светлых, 16 темных). Размеры шахматных фигур: Король: 70 мм * d 25 мм; Ферзь: 60 мм * d 25 мм; Слон: 50 мм* d 25 мм; Конь: 47 мм * d 25 мм; Ладья: 40 мм * d 25 мм; Пешка: 40 мм * d 25 мм. Размер доски: 290*145*40 мм в термоупаковке.',
+    //     name: 'Нарды Орловская Ладья SPL811',
+    //     description: 'материал: дерево,возраст: для взрослых, изображение: печать на принтере',
     //     rating: 5.0,
     //     link: 'https://kaspi.kz/shop/p/orlovskaja-lad-ja-p-1-100634146/?c=750000000#!/item',
     //     images: [
-    //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hcb/h90/32914749390878/orlovskaa-lada-p-1-100634146-1-Container.jpg',
+    //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h4e/h00/67474007097374/nardy-srednie-sportleader-500kh250kh34-spl811-108287934-2.jpg',
     //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/ha6/h47/49815433052190/orlovskaa-lada-p-1-100634146-3.jpg',
-    //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h7e/h00/32914752700446/orlovskaa-lada-p-1-100634146-2-Container.jpg'
     //     ]
     //   },
     //   {
-    //     name: 'Книга Булгаков М. А.: Собачье сердце',
-    //     description: 'В начале 1920-х гг. М. Булгаков последовательно создает три повести: "Дьяволиада" (1923), "Роковые яйца" (1924) и "Собачье сердце" (1925). Это была непосредственная и бурная реакция на "советизацию" России, на воцарение касты "шариковых". Повести "Дьяволиада" и "Роковые яйца" были опубликованы, соответственно, в 1924-м и 1925 гг. "Собачье сердце" ждало своего часа сорок три года. Булгаков-сатирик продолжает традиции русской прозы - Гоголя и Салтыкова-Щедрина. А в ранних его повестях уже прочитываются наметки к будущим главам "Мастера и Маргариты".',
+    //     name: 'Книга Сильвера А.: В конце они оба умрут',
+
+    //     description: 'Однажды ночью сотрудники «Отдела Смерти» звонят Матео Торресу и Руфусу Эметерио, чтобы сообщить им плохие новости: сегодня они умрут. Матео и Руфус не знакомы, но оба по разным причинам ищут себе друга, с которым проведут Последний День. К счастью, специально для этого есть приложение «Последний друг», которое помогает им встретиться и вместе прожить целую жизнь за один день.',
     //     rating: 5.0,
-    //     link: 'https://kaspi.kz/shop/p/bulgakov-m-a-sobach-e-serdtse-100343199/?c=750000000#!/item',
+    //     link: 'https://kaspi.kz/shop/p/sil-vera-a-v-kontse-oni-oba-umrut-101280241/?c=750000000#!/item',
     //     images: [
-    //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h19/he3/32799861506078/bulgakov-m-a-sobace-serdce-100343199-1.jpg',
-    //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/h41/hbc/32799865536542/bulgakov-m-a-sobace-serdce-100343199-2.jpg'
+    //       'https://resources.cdn-kaspi.kz/shop/medias/sys_master/images/images/hbc/h14/34401361100830/silvera-a-v-konce-oni-oba-umrut-101280241-1.jpg',
     //     ]
     //   },
     //   {
