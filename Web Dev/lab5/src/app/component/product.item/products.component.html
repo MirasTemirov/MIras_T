@@ -1,1 +1,27 @@
+<div class="container">
+<!--  <div class="item" *ngFor="let item of category?.items">-->
+    <!--    <igx-carousel #carousel>-->
+    <!--      <igx-slide *ngFor="let image of product.images">-->
+    <!--        <div>-->
+  <h2>{{item?.name}}</h2>
+    <img class="picture" src="assets/img/{{item?.image_link}}" [alt]="item?.name" width="100%">
+    <!--        </div>-->
+    <!--      </igx-slide>-->
+    <!--    </igx-carousel>-->
+        <br>
+        Rating: <span>{{item?.rating}}</span>
+        <br>
+      <div class="like_label">
+        {{item?.likes}} likes
+        <button class="like_button" (click)="make_like()">Like</button>
+      </div>
+        <h3>Описание:</h3>
+        <div class="description">{{item?.description}}</div>
 
+    <div class="actions">
+      <a class="button buy_link" [href]="item?.link" target="_blank">Купить</a>
+            <a class="button telegram_share" href="https://t.me/share/url?url={{item?.link}}" target="_blank">Поделиться в Telegram</a>
+            <a class="button whatsapp_share" href="whatsapp://send?text={{item?.link}}" target="_blank">Поделиться в Whatsapp</a>
+    </div>
+<!--  </div>-->
+</div>
