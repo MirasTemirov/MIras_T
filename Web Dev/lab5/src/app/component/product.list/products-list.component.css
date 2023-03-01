@@ -1,1 +1,68 @@
+.container{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item{
+  width: 40%;
+  margin: 30px;
+  padding: 25px;
+  display: inline-table;
+  border-style: solid;
+  border-color: orangered;
+  border-radius: 20px;
+  font-size: 16px;
+}
+
+.photo{
+  height: 160px;
+  width: auto;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.button{
+  display: block;
+  text-align: center;
+  text-decoration: None;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  border-style: solid;
+  margin-bottom: 14px;
+}
+
+.buy_link{
+  background: limegreen;
+  border-color: limegreen;
+}
+
+.telegram_share{
+  background: cornflowerblue;
+  border-color: cornflowerblue;
+}
+
+.whatsapp_share{
+  background: yellowgreen;
+  border-color: yellowgreen;
+}
+
+.description{
+  overflow: auto;
+  padding: 12px;
+  height: 200px;
+  margin-bottom: 40px;
+  border-color: darkcyan;
+  border-style: solid;
+  border-radius: 3px;
+}
+
+.heading{
+  text-align: center;
+  color: blueviolet;
+  font-size: 60px;
+}
 
