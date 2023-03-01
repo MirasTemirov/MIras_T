@@ -1,0 +1,17 @@
+
+<div class="container">
+  <div class="item" *ngFor="let category of categories">
+    <!--    <igx-carousel #carousel>-->
+    <!--      <igx-slide *ngFor="let image of product.images">-->
+    <!--        <div>-->
+    <img class="photo" [src]="category.image_link" [alt]="category.name" width="100%">
+    <!--        </div>-->
+    <!--      </igx-slide>-->
+    <!--    </igx-carousel>-->
+    <h2>{{category.name}}</h2>
+
+    <div class="actions">
+      <a class="button buy_link" [routerLink]="['category', category.id]">Выбрать</a>
+    </div>
+  </div>
+</div>
