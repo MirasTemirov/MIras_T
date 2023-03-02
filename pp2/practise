@@ -1,1 +1,69 @@
+1import os
+
+# Prompt the user for a directory path
+path = input("Enter a directory path: ")
+
+# Use the os.listdir() function to get a list of all files in the directory
+file_list = os.listdir(path)
+
+# Filter the list to include only Python files
+python_files = [file for file in file_list if file.endswith(".py")]
+
+# Print the resulting list of Python files
+print("Python files in the directory:")
+for file in python_files:
+    print(file)
+
+
+
+2# Ask the user to enter the name of a file
+filename = input("Enter the name of the file: ")
+
+# Open the file for reading
+with open(filename, 'r') as file:
+    data = file.read()
+
+# Display the contents of the file
+print("File contents:\n")
+print(data)
+
+# Count the number of characters in the file
+num_chars = len(data)
+print(f"\nNumber of characters in the file: {num_chars}")
+
+# Count the number of function definitions in the file
+num_functions = data.count("def ")
+print(f"Number of function definitions in the file: {num_functions}")
+
+# Count the number of equal signs in the file
+num_equals = data.count("=")
+print(f"Number of equal signs in the file: {num_equals}")
+
+
+
+3filename = input("Enter file name: ")
+
+try:
+    with open(filename, 'r') as file:
+        lines = file.readlines()
+except FileNotFoundError:
+    print(f"{filename} not found.")
+else:
+    print("File contents:")
+    for line_num, line in enumerate(lines):
+        print(f"{line_num + 1}. {line}", end='')
+
+    while True:
+        line_num = input("Enter line number to change (or '***' to stop): ")
+        if line_num == '***':
+            break
+        elif not line_num.isdigit() or int(line_num) < 1 or int(line_num) > len(lines):
+            print("Invalid line number.")
+        else:
+            new_line = input("Enter new line: ")
+            lines[int(line_num)-1] = new_line
+
+    with open(filename, 'w') as file:
+        file.writelines(lines)
+    print("File saved.")
 
