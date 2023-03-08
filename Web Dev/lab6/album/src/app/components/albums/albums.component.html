@@ -1,0 +1,12 @@
+<div *ngIf="loaded">
+  <div class="album_line" *ngFor="let album of albums; let i=index">
+    <span>{{album.title}}
+    <button class="view_button" [routerLink]="[album.id]">View</button>
+    <button class="delete_button" (click)="deleteAlbum(album.id, i)">Delete</button>
+    </span>
+  </div>
+</div>
+
+<div class="loading" *ngIf="!loaded">
+  Loading...
+</div>
