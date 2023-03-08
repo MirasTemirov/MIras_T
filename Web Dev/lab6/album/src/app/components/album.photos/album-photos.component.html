@@ -1,0 +1,15 @@
+<div *ngIf="loaded">
+
+  <button class="back_button" (click)="goBack()">Return Back</button>
+
+  <div *ngFor="let photo of photos" class="gallery">
+      <div class="image_group">
+      <h3>{{photo.title}}</h3>
+      <img [src]="photo.url" [alt]="photo.title">
+    </div>
+  </div>
+</div>
+
+<div class="loading" *ngIf="!loaded">
+  Loading...
+</div>
