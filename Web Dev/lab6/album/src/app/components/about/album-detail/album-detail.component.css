@@ -1,0 +1,60 @@
+.title{
+  font-size: 40px;
+  color: darkblue;
+  display: block;
+  font-weight: bold;
+}
+
+.body {
+  margin: 9px;
+  padding: 9px;
+  border: 2px solid lightcoral;
+  border-radius: 4px;
+}
+
+.change_button{
+  background: dodgerblue;
+  border: dodgerblue;
+  border-radius: 6px;
+  color: white;
+  font-size: 22px;
+  display: block;
+  margin-bottom: 23px;
+}
+
+.title_group{
+}
+
+input{
+  border-radius: 6px;
+  height: 27px;
+  font-size: 19px;
+  margin-right: 19px;
+}
+
+.save_button{
+  border: limegreen;
+  background: limegreen;
+  color: white;
+}
+
+.back_button{
+  color: white;
+  background: cornflowerblue;
+  border: cornflowerblue;
+  border-radius: 5px;
+  font-size: 20px;
+  margin-right: 19px;
+}
+
+.photos_button{
+  color: white;
+  background: deepskyblue;
+  border: deepskyblue;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+form{
+  margin-bottom: 20px;
+}
