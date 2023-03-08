@@ -1,0 +1,17 @@
+h1{
+  font-size: 50px;
+  color: mediumpurple;
+}
+
+p{
+  font-size: 20px;
+  color: cornflowerblue;
+}
+
+div{
+  border: chocolate 2px solid;
+  border-radius: 7px;
+  margin: 15px;
+  padding: 19px;
+
+}
