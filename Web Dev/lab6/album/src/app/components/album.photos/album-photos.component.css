@@ -1,0 +1,21 @@
+.gallery{
+  margin-left: 150px;
+  display: flex;
+}
+
+.image_group{
+  padding: 22px;
+  margin: 19px;
+  border: goldenrod 2px solid;
+  border-radius: 6px;
+}
+
+.back_button{
+  margin: 20px;
+  position: fixed;
+  background: deepskyblue;
+  border: deepskyblue;
+  color: white;
+  font-size: 20px;
+
+}
