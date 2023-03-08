@@ -1,0 +1,17 @@
+h1{
+  font-size: 50px;
+  color: orangered;
+}
+
+p{
+  font-size: 20px;
+  color: indigo;
+}
+
+div{
+  border: chocolate 1px solid;
+  border-radius: 7px;
+  margin: 15px;
+  padding: 19px;
+
+}
