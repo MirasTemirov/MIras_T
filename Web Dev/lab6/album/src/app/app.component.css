@@ -1,0 +1,37 @@
+.loading {
+  font-size: 20px;
+}
+
+.header{
+  background: darkorange;
+  padding: 10px;
+}
+
+.nav_link{
+  text-decoration: none;
+  font-size: 21px;
+  margin-right: 16px;
+  color: white;
+}
+
+.nav_link_main {
+  font-size: 32px !important;
+}
+
+.footer {
+  width: 98%;
+  color: gray;
+  background: antiquewhite;
+  font-size: 17px;
+  position: fixed;
+  bottom: 0;
+  padding: 18px;
+}
+
+.align-right {
+  margin-left: 850px;
+}
+
+.block{
+  display: inline;
+}
