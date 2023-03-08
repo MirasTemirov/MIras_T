@@ -1,0 +1,18 @@
+<div *ngIf="loaded" class="body">
+  <div class="title_group">
+  <p class="title">{{album.title}}</p>
+  <button class="change_button" (click)="(toEdit=true)">Change title</button>
+  </div>
+
+  <form *ngIf="toEdit" (submit)="updateAlbum()">
+    <input [(ngModel)]="album.title" name="title">
+    <input class="save_button" type="submit" value="SAVE">
+  </form>
+
+  <button class="back_button" (click)="goBack()">Return back</button>
+  <button class="photos_button" routerLink="photos">Photos</button>
+</div>
+
+<div *ngIf="!loaded" class="loading">
+  Loading...
+</div>
