@@ -1,0 +1,260 @@
+Ввод-вывод, оператор присваивания, арифметические операции
+1#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main() {
+    int a, b;
+    ifstream input("input.txt");
+    input >> a >> b;
+    input.close();
+    ofstream output("output.txt");
+    output << a + b;
+    output.close();
+    return 0;
+}
+
+2#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+    ifstream input("input.txt");
+    ofstream output("output.txt");
+    string line;
+    while (getline(input, line)) {
+        // Удаляем лидирующие пробелы
+        line.erase(line.begin(), find_if(line.begin(), line.end(), [](int ch) {
+            return !isspace(ch);
+        }));
+        // Удаляем концевые пробелы
+        line.erase(find_if(line.rbegin(), line.rend(), [](int ch) {
+            return !isspace(ch);
+        }).base(), line.end());
+        // Заменяем множественные пробелы на один пробел
+        unique(line.begin(), line.end(), [](char a, char b) {
+            return isspace(a) && isspace(b);
+        }), line.end();
+        // Записываем очищенную строку в выходной файл
+        output << line << endl;
+    }
+    input.close();
+    output.close();
+    return 0;
+}
+
+3#include <iostream>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
+
+int main() {
+    int N;
+    ifstream input("input.txt");
+    input >> N;
+    input.ignore(); // Пропускаем символ новой строки
+    ofstream output("output.txt");
+    string line, word;
+    while (input >> word) {
+        if (line.size() + word.size() + 1 > N) { // Новое слово не помещается в текущую строку
+            output << line << endl;
+            line = word;
+        } else { // Новое слово помещается в текущую строку
+            if (!line.empty()) {
+                line += " ";
+            }
+            line += word;
+        }
+    }
+    output << line << endl; // Выводим последнюю строку
+    input.close();
+    output.close();
+    return 0;
+}
+
+4#include <iostream>
+#include <fstream>
+#include <sstream>
+
+using namespace std;
+
+int main() {
+    int N;
+    ifstream input("input.txt");
+    input >> N;
+    input.ignore(); // Пропускаем символ новой строки
+    ofstream output("output.txt");
+    string line, word;
+    while (input >> word) {
+        if (line.empty()) { // Первое слово в строке
+            line = word;
+        } else if (line.size() + word.size() + 1 > N) { // Новое слово не помещается в текущую строку
+            int spaces = N - line.size();
+            if (spaces > 0) {
+                line = string(spaces, ' ') + line;
+            }
+            output << line << endl;
+            line = word;
+        } else { // Новое слово помещается в текущую строку
+            if (!line.empty()) {
+                line = " " + line;
+            }
+            line = word + line;
+        }
+    }
+    if (!line.empty()) { // Выводим последнюю строку
+        int spaces = N - line.size();
+        if (spaces > 0) {
+            line = string(spaces, ' ') + line;
+        }
+        output << line << endl;
+    }
+    input.close();
+    output.close();
+    return 0;
+}
+
+5#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+// Функция разбивает строку на слова
+vector<string> split(string str) {
+    vector<string> words;
+    istringstream iss(str);
+    string word;
+    while (iss >> word) {
+        words.push_back(word);
+    }
+    return words;
+}
+
+// Функция форматирует строку
+string format(string str, int width, bool last_line = false) {
+    vector<string> words = split(str);
+
+    // Если строка содержит только одно слово или это последняя строка,
+    // то ее не нужно форматировать
+    if (words.size() == 1 || last_line) {
+        return str;
+    }
+
+    int total_word_length = 0;
+    for (auto& word : words) {
+        total_word_length += word.length();
+    }
+
+    int num_spaces = width - total_word_length;
+    int min_spaces = num_spaces / (words.size() - 1);
+    int extra_spaces = num_spaces % (words.size() - 1);
+
+    string formatted_str;
+    for (int i = 0; i < words.size(); i++) {
+        formatted_str += words[i];
+        if (i < words.size() - 1) {
+            formatted_str += string(min_spaces + (i < extra_spaces ? 1 : 0), ' ');
+        }
+    }
+
+    return formatted_str;
+}
+
+int main() {
+    int width;
+    string line;
+    vector<string> lines;
+
+    ifstream input("input.txt");
+    input >> width;
+    getline(input, line);  // считываем оставшуюся часть первой строки
+    while (getline(input, line)) {
+        lines.push_back(line);
+    }
+    input.close();
+
+    ofstream output("output.txt");
+    for (int i = 0; i < lines.size(); i++) {
+        bool last_line = (i == lines.size() - 1);
+        string formatted_line = format(lines[i],
+
+6#include <iostream>
+#include <string>
+#include <map>
+#include <cctype>
+
+int main() {
+    std::map<char, int> letter_counts;
+
+    // Read input text
+    std::string input_text;
+    std::getline(std::cin, input_text);
+
+    // Count letters in input text
+    for (char c : input_text) {
+        if (std::isalpha(c)) {
+            char letter = std::toupper(c);
+            letter_counts[letter]++;
+        }
+    }
+
+    // Print letter counts
+    for (char letter = 'A'; letter <= 'Z'; letter++) {
+        std::cout << letter << ": " << letter_counts[letter] << std::endl;
+    }
+
+    return 0;
+}
+
+7#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <cctype>
+
+int main() {
+    std::vector<std::pair<char, int>> letter_counts;
+
+    // Read input text from file
+    std::ifstream input_file("input.txt");
+    std::string input_text;
+    std::getline(input_file, input_text);
+
+    // Count letters in input text
+    for (char c : input_text) {
+        if (std::isalpha(c)) {
+            char letter = std::toupper(c);
+            auto it = std::find_if(letter_counts.begin(), letter_counts.end(),
+                [&letter](const std::pair<char, int>& p) { return p.first == letter; });
+            if (it != letter_counts.end()) {
+                it->second++;
+            } else {
+                letter_counts.push_back(std::make_pair(letter, 1));
+            }
+        }
+    }
+
+    // Sort letter counts in descending order
+    std::sort(letter_counts.begin(), letter_counts.end(),
+        [](const std::pair<char, int>& p1, const std::pair<char, int>& p2) {
+            return p1.second > p2.second;
+        });
+
+    // Print letter counts
+    std::ofstream output_file("output.txt");
+    for (auto& p : letter_counts) {
+        output_file << p.first << " " << p.second << std::endl;
+    }
+
+    return 0;
+}
+
