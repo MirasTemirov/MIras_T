@@ -1,0 +1,44 @@
+1if __name__ == '__main__':
+    print("Hello, World!")
+    
+ 
+2
+a = int(input())
+b = int(input())
+
+print(a + b)
+print(a - b)
+print(a * b)
+
+3a = int(input())
+b = int(input())
+
+print(a // b)
+print(a / b)
+
+4
+def print_full_name(first, last):
+    print("Hello", first, last + "!", "You just delved into python.")
+
+# Example usage:
+first_name = input()
+last_name = input()
+print_full_name(first_name, last_name)
+
+5
+n = int(input())
+
+if n % 2 == 1:
+    print("Weird")
+elif n % 2 == 0 and n in range(2, 6):
+    print("Not Weird")
+elif n % 2 == 0 and n in range(6, 21):
+    print("Weird")
+elif n % 2 == 0 and n > 20:
+    print("Not Weird")
+
+6
+n = int(input())
+for i in range(n):
+    print(i**2)
+
