@@ -1,0 +1,136 @@
+1a = int(input())
+b = int(input())
+
+if a > b:
+    print(a)
+else:
+    print(b)
+
+
+2year = int(input())
+
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print("YES")
+else:
+    print("NO")
+
+3x = int(input())
+
+if x > 0:
+    print(1)
+elif x < 0:
+    print(-1)
+else:
+    print(0)
+
+
+4year = int(input())
+
+if (year % 4 == 0 and year % 100 != 0) or year % 400 == 0:
+    print("YES")
+else:
+    print("NO")
+    
+    
+    
+5
+x1 = int(input())  # координата x для слона
+y1 = int(input())  # координата y для слона
+x2 = int(input())  # координата x для другой фигуры
+y2 = int(input())  # координата y для другой фигуры
+
+# проверяем, находится ли другая фигура на диагонали слона
+if abs(x1 - x2) == abs(y1 - y2):
+    print("YES")
+else:
+    print("NO")
+    
+    
+
+6
+x1 = int(input())  # номер столбца начальной клетки
+y1 = int(input())  # номер строки начальной клетки
+x2 = int(input())  # номер столбца конечной клетки
+y2 = int(input())  # номер строки конечной клетки
+
+# проверяем, может ли король попасть из начальной клетки в конечную за один ход
+if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:
+    print("YES")
+else:
+    print("NO")
+
+14
+x1 = int(input())  # номер столбца начальной клетки
+y1 = int(input())  # номер строки начальной клетки
+x2 = int(input())  # номер столбца конечной клетки
+y2 = int(input())  # номер строки конечной клетки
+
+# проверяем, может ли король попасть из начальной клетки в конечную за один ход
+if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:
+    print("YES")
+else:
+    print("NO")
+
+
+AB:
+n = int(input())
+if n == 0:
+print("bochek")
+elif n % 10 == 1 and n != 11:
+print("bochka")
+elif 2 <= n % 10 <= 4 and (n < 10 or n > 20):
+print("bochki")
+else:
+print("bochek")
+
+
+AC:
+a, b, c = map(int, input().split())
+
+if (a % 2 == 0 and b % 2 != 0 and c % 2 != 0) or \
+   (a % 2 != 0 and b % 2 == 0 and c % 2 != 0) or \
+   (a % 2 != 0 and b % 2 != 0 and c % 2 == 0):
+    print("YES")
+else:
+    print("NO")
+
+
+AD:
+x = int(input())  # входное число
+
+# словарь соответствий десятичных чисел и римских цифр
+roman_numerals = {
+    100: 'C', 90: 'XC', 50: 'L', 40: 'XL',
+    10: 'X', 9: 'IX', 5: 'V', 4: 'IV', 1: 'I'
+}
+
+roman_numeral = ""  # римское число, которое будем формировать
+
+# проходим по словарю в порядке убывания десятичных чисел
+for number, numeral in roman_numerals.items():
+    # вычисляем, сколько раз входное число X содержит текущее десятичное число
+    count = x // number
+
+    # добавляем к римскому числу соответствующее количество римских цифр
+    roman_numeral += numeral * count
+
+    # вычитаем из X произведение текущего десятичного числа на количество раз, которое оно встретилось в X
+    x -= number * count
+
+print(roman_numeral)
+
+AE:
+a = int(input())
+b = int(input())
+c = int(input())
+
+if a > b:
+    a, b = b, a
+if b > c:
+    b, c = c, b
+if a > b:
+    a, b = b, a
+
+print(a, b, c)
+
+
