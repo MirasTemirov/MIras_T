@@ -1,0 +1,98 @@
+1a = float(input())
+b = float(input())
+c = (a**2 + b**2)**0.5
+print(c)
+
+
+2n = int(input())
+
+next_num = n + 1
+prev_num = n - 1
+
+print("The next number for the number", n, "is", next_num, end=".\n")
+print("The previous number for the number", n, "is", prev_num, end=".")
+
+
+3a = int(input())
+b = int(input())
+
+c = b/a
+print(c)
+
+4a = int(input())
+b = int(input())
+
+c = b&a
+print(c)
+
+5v = int(input())
+t = int(input())
+
+c =abs(v*t)
+d = 109-c
+print(abs(d))
+
+6n = int(input())
+
+next_num = n + 1
+prev_num = n - 1
+
+print("The next number for the number", n, "is", next_num, end=".\n")
+print("The previous number for the number", n, "is", prev_num, end=".")
+
+
+7number = int(input())
+tens = (number // 10) % 10
+print(tens)
+
+
+8number = input() # считываем трехзначное число как строку
+sum_of_digits = int(number[0]) + int(number[1]) + int(number[2]) # находим сумму цифр
+print(sum_of_digits) # выводим результат
+
+
+9n = int(input())
+hours = n // 60
+minutes = n % 60
+if hours >= 24:
+    hours -= 24
+print(hours, minutes)
+
+
+10n = int(input())
+hours = n // 3600
+minutes = (n // 60) % 60
+seconds = n % 60
+print("{:d}:{:02d}:{:02d}".format(hours, minutes, seconds))
+
+
+11number = input() # считываем трехзначное число как строку
+sum_of_digits = int(number[0]) + int(number[1]) + int(number[2]) # находим сумму цифр
+print(sum_of_digits) # выводим результат
+
+
+12# Ввод номера урока
+lesson_number = int(input())
+
+# Вычисление времени начала урока
+start_time = 9 * 60 + (lesson_number - 1) * 45 + (lesson_number // 2) * 5 + ((lesson_number - 1) // 2) * 15
+
+# Вычисление времени окончания урока
+end_time = start_time + 45 + (lesson_number % 2) * 10
+
+# Вывод времени окончания урока
+print(end_time // 60, end_time % 60)
+
+
+15n, k = map(int, input().split())
+
+a = k // n
+total = a * n
+distributed = a * (n - (k % n)) + (a + 1) * (k % n)
+
+if total > distributed:
+    result = (total - distributed) // (n - (k % n))
+else:
+    result = 0
+
+print(result)
