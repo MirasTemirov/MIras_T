@@ -96,3 +96,73 @@ else:
     result = 0
 
 print(result)
+
+j)
+import cmath
+
+a = float(input("Введите a: "))
+b = float(input("Введите b: "))
+c = float(input("Введите c: "))
+
+d = b**2 - 4*a*c
+
+if d > 0:
+    x1 = (-b + cmath.sqrt(d)) / (2*a)
+    x2 = (-b - cmath.sqrt(d)) / (2*a)
+    print("Корни уравнения: ", x1, x2)
+elif d == 0:
+    x = -b / (2*a)
+    print("Уравнение имеет один корень: ", x)
+else:
+    print("Уравнение не имеет действительных корней")
+
+
+k)a = int(input("Введите сторону a: "))
+b = int(input("Введите сторону b: "))
+c = int(input("Введите сторону c: "))
+
+if a + b <= c or b + c <= a or c + a <= b:
+    print("impossible")
+elif a*a + b*b == c*c or b*b + c*c == a*a or c*c + a*a == b*b:
+    print("rectangular")
+elif a*a + b*b < c*c or b*b + c*c < a*a or c*c + a*a < b*b:
+    print("obtuse")
+else:
+    print("acute")
+
+
+l)n = int(input("Введите число коров: "))
+
+if n % 10 == 1 and n % 100 != 11:
+    print(n, "korova")
+elif 2 <= n % 10 <= 4 and (n % 100 < 10 or n % 100 >= 20):
+    print(n, "korovy")
+else:
+    print(n, "korov")
+
+
+m)n = int(input("Введите количество поездок: "))
+
+num_tickets_60 = n // 60
+num_tickets_10 = (n - num_tickets_60*60) // 10
+num_tickets_1 = n - num_tickets_60*60 - num_tickets_10*10
+
+if num_tickets_60*440 + num_tickets_10*125 + num_tickets_1*15 < (num_tickets_60+1)*440:
+    print(num_tickets_1, num_tickets_10, num_tickets_60)
+else:
+    num_tickets_60 += 1
+    num_tickets_10 = 0
+    num_tickets_1 = 0
+    print(num_tickets_1, num_tickets_10, num_tickets_60)
+
+
+n)n = int(input("Введите количество поездок: "))
+
+num_tickets_60 = n // 60
+num_tickets_20 = (n - num_tickets_60*60) // 20
+num_tickets_10 = (n - num_tickets_60*60 - num_tickets_20*20) // 10
+num_tickets_5 = (n - num_tickets_60*60 - num_tickets_20*20 - num_tickets_10*10) // 5
+num_tickets_1 = n - num_tickets_60*60 - num_tickets_20*20 - num
+
+
+
