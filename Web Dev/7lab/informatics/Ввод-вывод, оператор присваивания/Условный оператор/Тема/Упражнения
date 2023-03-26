@@ -1,0 +1,76 @@
+1a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+if a > b:
+    print("Наибольшее число:", a)
+else:
+    print("Наибольшее число:", b)
+
+
+2a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+if a > b:
+    print("1")
+elif b > a:
+    print("2")
+else:
+    print("0")
+
+
+3a = 10
+b = 20
+c = 15
+
+max_number = max(a, b, c)
+print(max_number)
+
+
+4a = float(input("Введите длину первой стороны треугольника: "))
+b = float(input("Введите длину второй стороны треугольника: "))
+c = float(input("Введите длину третьей стороны треугольника: "))
+
+if a + b > c and b + c > a and a + c > b:
+    print("YES")
+else:
+    print("NO")
+
+
+5a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+c = int(input("Введите третье число: "))
+
+if a == b and b == c:
+    print("3")
+elif a == b or b == c or a == c:
+    print("2")
+else:
+    print("0")
+
+
+6a1, b1, a2, b2 = map(int, input().split())
+
+if a1 == a2 or b1 == b2:
+    print("YES")
+else:
+    print("NO")
+
+
+7
+x1, y1, x2, y2 = map(int, input().split())
+
+# Проверяем, что разница между x1 и x2, а также между y1 и y2, не больше 1.
+if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:
+    print("YES")
+else:
+    print("NO")
+    
+   
+ 
+8x1, y1, x2, y2 = map(int, input().split())
+
+# Проверяем, что разница между x1 и x2, а также между y1 и y2, не больше 1.
+if abs(x1 - x2) <= 1 and abs(y1 - y2) <= 1:
+    print("YES")
+else:
+    print("NO")
