@@ -1,0 +1,67 @@
+1def sleep_in(weekday, vacation):
+    return not weekday or vacation
+
+
+2
+def diff21(n):
+    if n > 21:
+        return 2 * abs(n - 21)
+    else:
+        return abs(n - 21)
+
+3
+def near_hundred(n):
+  return ((abs(100 - n) <= 10) or (abs(200 - n) <= 10))
+4
+def missing_char(str, n):
+  front = str[:n]   # up to but not including n
+  back = str[n+1:]  # n+1 through end of string
+  return front + back
+  
+5
+def monkey_trouble(a_smile, b_smile):
+  if a_smile and b_smile:
+    return True
+  if not a_smile and not b_smile:
+    return True
+  return False
+  ## The above can be shortened to:
+  ##   return ((a_smile and b_smile) or (not a_smile and not b_smile))
+  ## Or this very short version (think about how this is the same as the above)
+  ##   return (a_smile == b_smile)
+  
+6
+def parrot_trouble(talking, hour):
+  return (talking and (hour < 7 or hour > 20))
+
+7
+def pos_neg(a, b, negative):
+  if negative:
+    return (a < 0 and b < 0)
+  else:
+    return ((a < 0 and b > 0) or (a > 0 and b < 0))
+ 
+ 8
+def front_back(str):
+  if len(str) <= 1:
+    return str
+  
+  mid = str[1:len(str)-1]  # can be written as str[1:-1]
+  
+  # last + mid + first
+  return str[len(str)-1] + mid + str[0]
+
+9
+def sum_double(a, b):
+  # Store the sum in a local variable
+  sum = a + b
+  
+  # Double it if a and b are the same
+  if a == b:
+    sum = sum * 2
+  return sum
+  
+  
+10
+def makes10(a, b):
+  return (a == 10 or b == 10 or a+b == 10)
