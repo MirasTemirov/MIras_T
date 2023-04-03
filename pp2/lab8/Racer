@@ -1,0 +1,73 @@
+import pygame
+import random
+
+# initialize pygame
+pygame.init()
+
+# set up the screen
+screen_width = 640
+screen_height = 480
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Coin Collector")
+
+# set up the font
+font = pygame.font.SysFont(None, 30)
+
+# set up the colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+YELLOW = (255, 255, 0)
+
+# set up the player
+player_size = 60
+player_pos = [screen_width/2 - player_size/2, screen_height - player_size - 10]
+player_speed = 5
+
+# set up the coins
+coin_size = 20
+coin_speed = 2
+coins = []
+for i in range(5):
+    coins.append([random.randint(0, screen_width-coin_size), random.randint(-screen_height, 0)])
+collected_coins = 0
+
+# set up the game loop
+game_over = False
+clock = pygame.time.Clock()
+
+while not game_over:
+    # handle events
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            game_over = True
+    
+    # move the player
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player_pos[0] > 0:
+        player_pos[0] -= player_speed
+    if keys[pygame.K_RIGHT] and player_pos[0] < screen_width - player_size:
+        player_pos[0] += player_speed
+    
+    # move the coins and check for collision with player
+    for i, coin in enumerate(coins):
+        coin[1] += coin_speed
+        if coin[1] > screen_height:
+            coins[i] = [random.randint(0, screen_width-coin_size), random.randint(-screen_height, 0)]
+        if player_pos[0] < coin[0] + coin_size and player_pos[0] + player_size > coin[0] and player_pos[1] < coin[1] + coin_size and player_pos[1] + player_size > coin[1]:
+            coins[i] = [random.randint(0, screen_width-coin_size), random.randint(-screen_height, 0)]
+            collected_coins += 1
+    
+    # update the screen
+    screen.fill(WHITE)
+    pygame.draw.rect(screen, BLACK, [player_pos[0], player_pos[1], player_size, player_size])
+    for coin in coins:
+        pygame.draw.ellipse(screen, YELLOW, [coin[0], coin[1], coin_size, coin_size])
+    text = font.render("Coins: " + str(collected_coins), True, BLACK)
+    screen.blit(text, (screen_width - text.get_width() - 10, 10))
+    pygame.display.update()
+    
+    # set the frame rate
+    clock.tick(60)
+
+# quit pygame
+pygame.quit()
