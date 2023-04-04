@@ -1,0 +1,118 @@
+import pygame
+
+pygame.init()
+
+# Set up the display
+display_width = 800
+display_height = 600
+game_display = pygame.display.set_mode((display_width, display_height))
+pygame.display.set_caption('Drawing a Rectangle')
+
+# Colors
+white = (255, 255, 255)
+black = (0, 0, 0)
+red = (255, 0, 0)
+
+# Draw a rectangle
+rect_x = 100
+rect_y = 200
+rect_width = 200
+rect_height = 100
+pygame.draw.rect(game_display, red, [rect_x, rect_y, rect_width, rect_height])
+
+# Update the display
+pygame.display.update()
+
+# Quit pygame when done
+pygame.quit()
+quit()
+
+
+To draw a circle using Pygame in Python, you would use the "pygame.draw.circle()" method. Here is an example code on how to draw a circle using Pygame:
+import pygame
+
+pygame.init()
+
+# Set up the display
+display_width = 800
+display_height = 600
+game_display = pygame.display.set_mode((display_width, display_height))
+pygame.display.set_caption('Drawing a Circle')
+
+# Colors
+white = (255, 255, 255)
+black = (0, 0, 0)
+blue = (0, 0, 255)
+
+# Draw a circle
+circle_x = 400
+circle_y = 300
+radius = 50
+pygame.draw.circle(game_display, blue, (circle_x, circle_y), radius)
+
+# Update the display
+pygame.display.update()
+
+# Quit pygame when done
+pygame.quit()
+quit()
+
+
+To erase in Pygame, you could redraw the area you want to erase with the background color. Here is an example code:
+import pygame
+
+pygame.init()
+
+# Set up the display
+display_width = 800
+display_height = 600
+game_display = pygame.display.set_mode((display_width, display_height))
+pygame.display.set_caption('Eraser Example')
+
+# Colors
+white = (255, 255, 255)
+black = (0, 0, 0)
+
+# Draw a rectangle to "erase"
+erase_x = 100
+erase_y = 200
+erase_width = 200
+erase_height = 100
+pygame.draw.rect(game_display, black, [erase_x, erase_y, erase_width, erase_height])
+
+# Update the display
+pygame.display.update()
+
+# Wait for user to press a key
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                running = False
+
+# Quit pygame when done
+pygame.quit()
+quit()
+
+
+For color selection, you could use the "pygame.Color()" method to create a color variable with the values for RGB or RGBA. Here is an example code:
+import pygame
+
+pygame.init()
+
+# Create colors
+red = pygame.Color(255, 0, 0)
+green = pygame.Color(0, 255, 0)
+blue = pygame.Color(0, 0, 255)
+black = pygame.Color(0, 0, 0)
+white = pygame.Color(255, 255, 255)
+
+# Use the colors in drawing methods
+# ...
+
+# Quit pygame when done
+pygame.quit()
+quit()
