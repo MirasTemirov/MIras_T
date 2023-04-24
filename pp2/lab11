@@ -1,0 +1,87 @@
+Function that returns all records based on a pattern (example of pattern: part of name, surname, phone number)
+
+import mysql.connector
+
+def search_records(pattern):
+    try:
+        conn = mysql.connector.connect(user='your_username', password='your_password', host='localhost', database='your_database')
+        cursor = conn.cursor()
+
+        query = "SELECT * FROM phonebook WHERE name LIKE %s OR surname LIKE %s OR phone LIKE %s"
+        params = ('%{}%'.format(pattern), '%{}%'.format(pattern), '%{}%'.format(pattern))
+        cursor.execute(query, params)
+
+        results = cursor.fetchall()
+
+        return results
+
+    except mysql.connector.Error as error:
+        print("Failed to search records in database: {}".format(error))
+
+    finally:
+        if conn.is_connected():
+            cursor.close()
+            conn.close()
+
+Create procedure to insert new user by name and phone, update phone if user already exists
+import mysql.connector
+
+def insert_or_update_user(name, phone):
+    try:
+        conn = mysql.connector.connect(user='your_username', password='your_password', host='localhost', database='your_database')
+        cursor = conn.cursor()
+
+        # First, try to update the phone if the user already exists
+        query = "UPDATE phonebook SET phone = %s WHERE name = %s"
+        params = (phone, name)
+        cursor.execute(query, params)
+
+        # If the update didn't affect any rows, insert a new record
+        if cursor.rowcount == 0:
+            query = "INSERT INTO phonebook (name, phone) VALUES (%s, %s)"
+            params = (name, phone)
+            cursor.execute(query, params)
+
+        conn.commit()
+
+    except mysql.connector.Error as error:
+        print("Failed to insert or update user in database: {}".format(error))
+
+    finally:
+        if conn.is_connected():
+            cursor.close()
+            conn.close()
+
+
+Create procedure to insert many new users by list of name and phone. Use loop and if statement in stored procedure. Check correctness of phone in procedure and return all incorrect data.
+import mysql.connector
+
+def insert_users(users):
+    try:
+        conn = mysql.connector.connect(user='your_username', password='your_password', host='localhost', database='your_database')
+        cursor = conn.cursor()
+
+        # Iterate over the list of users and insert each one into the database
+        incorrect_data = []
+        for user in users:
+            name, phone = user
+            if not phone.isdigit():
+                incorrect_data.append(user)
+                continue
+            query = "INSERT INTO phonebook (name, phone) VALUES (%s, %s)"
+            params = (name, phone)
+            cursor.execute(query, params)
+
+        conn.commit()
+
+        return incorrect_data
+
+    except mysql.connector.Error as error:
+        print("Failed to insert users in database: {}".format(error))
+
+    finally:
+        if conn.is_connected():
+            cursor.close()
+            conn.close()
+
+This procedure takes a list of tuples containing name and phone for each user to be inserted. It
