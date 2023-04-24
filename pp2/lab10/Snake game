@@ -1,0 +1,76 @@
+import sqlite3
+
+class SnakeGame:
+    def __init__(self, db_path):
+        self.db_path = db_path
+        self.connection = sqlite3.connect(db_path)
+        self.cursor = self.connection.cursor()
+        
+        # Create user and user_score tables if they don't exist
+        self.cursor.execute('''
+            CREATE TABLE IF NOT EXISTS user (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT UNIQUE,
+                level INTEGER DEFAULT 1
+            )
+        ''')
+        
+        self.cursor.execute('''
+            CREATE TABLE IF NOT EXISTS user_score (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER,
+                score INTEGER,
+                FOREIGN KEY (user_id) REFERENCES user(id)
+            )
+        ''')
+        
+        self.connection.commit()
+        
+    def get_user_level(self, name):
+        # Get user's current level from the user table
+        self.cursor.execute("SELECT level FROM user WHERE name=?", (name,))
+        result = self.cursor.fetchone()
+        if result:
+            return result[0]
+        else:
+            return None
+        
+    def create_user(self, name):
+        # Insert a new user into the user table
+        self.cursor.execute('INSERT INTO user (name) VALUES (?)', (name,))
+        self.connection.commit()
+        
+    def save_user_score(self, name, score):
+        # Get the user's ID from the user table
+        self.cursor.execute("SELECT id FROM user WHERE name=?", (name,))
+        result = self.cursor.fetchone()
+        if result:
+            user_id = result[0]
+            
+            # Insert the user's score into the user_score table
+            self.cursor.execute('INSERT INTO user_score (user_id, score) VALUES (?, ?)', (user_id, score))
+            self.connection.commit()
+            
+    def pause_and_save(self, name, score):
+        # Update the user's score in the user_score table and pause the game
+        self.save_user_score(name, score)
+        print('Game paused. Your progress has been saved.')
+        
+game = SnakeGame('snake_game.db')
+
+# Ask user for their username before starting the game
+name = input('Enter your username: ')
+
+# Check if the user already exists in the user table, and show their current level if they do
+level = game.get_user_level(name)
+if level:
+    print(f'Welcome back, {name}! You are currently on level {level}.')
+else:
+    print(f'Welcome, {name}!')
+
+# Start the game
+# ...
+
+# When the user pauses the game, save their progress and score to the user_score table
+score = 100  # Example score
+game.pause_and_save(name, score)
